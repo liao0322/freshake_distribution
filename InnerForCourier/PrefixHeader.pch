@@ -1,0 +1,25 @@
+//
+//  PrefixHeader.pch
+//  InnerForCourier
+//
+//  Created by DamonLiao on 2017/2/4.
+//  Copyright © 2017年 DamonLiao. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "XFKVCPersistence.h"
+#import "UIColor+Project.h"
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(@"%@", [NSString stringWithFormat:__VA_ARGS__])
+#else
+#define NSLog(...)
+#endif
+
+
+#endif /* PrefixHeader_pch */
