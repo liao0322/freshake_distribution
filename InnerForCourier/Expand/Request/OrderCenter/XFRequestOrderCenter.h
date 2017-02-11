@@ -10,6 +10,7 @@
 #import "URLOrderCenter.h"
 #import "XFRequestOrderCenterKeys.h"
 @class XFOrderDetailsModel;
+@class XFExpress;
 
 @interface XFRequestOrderCenter : XFBaseRequest
 
@@ -54,7 +55,7 @@
 + (void)orderExpressWithOriginalNo:(NSString *)originalNo
                         sourceCode:(NSString *)sourceCode
                            syscode:(NSString *)syscode
-                           success:(SuccessWithArray)success
+                           success:(void(^)(NSArray *dataArray, NSInteger statusCode, XFExpress *express))success
                            failure:(Failed)failure;
 
 

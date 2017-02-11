@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "XFTableViewCell.h"
-@class XFExpress;
+@class XFExpressList;
 
 @interface XFExpressDetailsTimeLineTVCell : XFTableViewCell
 
-@property (nonatomic) XFExpress *model;
+@property (nonatomic) XFExpressList *model;
 
 @end

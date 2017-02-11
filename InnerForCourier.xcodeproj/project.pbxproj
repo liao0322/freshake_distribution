@@ -16,6 +16,7 @@
 		FE474E1A1E2DEADD0005CD98 /* InnerForCourierUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE474E191E2DEADD0005CD98 /* InnerForCourierUITests.m */; };
 		FE72EFAE1E44757200584C1C /* XFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE72EFAD1E44757200584C1C /* XFLoginViewController.m */; };
 		FEA20E941E4D6FF200FAD315 /* XFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */; };
+		FEA20EC61E4EEC3000FAD315 /* XFExpressList.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA20EC51E4EEC3000FAD315 /* XFExpressList.m */; };
 		FEAD148B1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14891E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.m */; };
 		FEAD148C1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAD148A1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.xib */; };
 		FEAD148F1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD148E1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.m */; };
@@ -110,6 +111,8 @@
 		FE72EFB31E44759A00584C1C /* XFColorDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFColorDefine.h; sourceTree = "<group>"; };
 		FEA20E921E4D6FF200FAD315 /* XFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFTableViewCell.h; sourceTree = "<group>"; };
 		FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFTableViewCell.m; sourceTree = "<group>"; };
+		FEA20EC41E4EEC3000FAD315 /* XFExpressList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressList.h; sourceTree = "<group>"; };
+		FEA20EC51E4EEC3000FAD315 /* XFExpressList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFExpressList.m; sourceTree = "<group>"; };
 		FEAD14881E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressDetailsFirstLineTVCell.h; sourceTree = "<group>"; };
 		FEAD14891E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFExpressDetailsFirstLineTVCell.m; sourceTree = "<group>"; };
 		FEAD148A1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFExpressDetailsFirstLineTVCell.xib; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 			children = (
 				FEAD14AF1E4AFD41000962D3 /* XFExpress.h */,
 				FEAD14B01E4AFD41000962D3 /* XFExpress.m */,
+				FEA20EC41E4EEC3000FAD315 /* XFExpressList.h */,
+				FEA20EC51E4EEC3000FAD315 /* XFExpressList.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1057,6 +1062,7 @@
 				FEAD149D1E49D01A000962D3 /* XFOrder.m in Sources */,
 				FEAD14AD1E4ABE76000962D3 /* XFGoods.m in Sources */,
 				FEAD14C31E4C0041000962D3 /* XFOrderDetailsAddressCell.m in Sources */,
+				FEA20EC61E4EEC3000FAD315 /* XFExpressList.m in Sources */,
 				FEAD14941E49B5C5000962D3 /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

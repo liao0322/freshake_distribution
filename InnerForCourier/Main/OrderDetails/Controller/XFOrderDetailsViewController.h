@@ -12,6 +12,9 @@
 
 // 订单编号
 @property (copy, nonatomic) NSString *originalNo;
+
+@property (copy, nonatomic) NSString *originalId;
+
 @property (copy, nonatomic) NSString *orderStatus;
 
 @end

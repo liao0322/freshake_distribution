@@ -16,9 +16,9 @@
 @property (copy, nonatomic) NSString *originalNo;
 
 /**
- * 订单编号
+ * 第三方订单编号
  */
-@property (copy, nonatomic) NSString *orderNo;
+@property (copy, nonatomic) NSString *originalId;
 
 /**
  订单状态

@@ -11,6 +11,7 @@
 #import "XFExpressDetailsTimeLineTVCell.h"
 #import "XFRequestOrderCenter.h"
 #import "XFExpress.h"
+#import "XFExpressList.h"
 
 #define MARGIN_LEFT 70.0f
 
@@ -21,6 +22,8 @@
 
 @property (copy, nonatomic) NSString *orderStatus;
 @property (copy, nonatomic) NSString *originalNo;
+
+@property (nonatomic) XFExpress *express;
 
 @end
 
@@ -50,16 +53,19 @@ static CGFloat const EstimatedCellHeight = 100.0f;
     [super requestData];
 
     [XFProgressHUD showLoading];
-    [XFRequestOrderCenter orderExpressWithOriginalNo:self.originalNo sourceCode:@"1" syscode:@"002" success:^(NSArray *dataArray, NSInteger statusCode) {
+    
+    [XFRequestOrderCenter orderExpressWithOriginalNo:self.originalNo sourceCode:@"1" syscode:@"002" success:^(NSArray *dataArray, NSInteger statusCode, XFExpress *express) {
         [XFProgressHUD dismiss];
         if (!dataArray) {
             return;
         }
+        self.express = express;
         self.dataArray = [dataArray mutableCopy];
         [self.tableView reloadData];
     } failure:^(NSError *error, NSInteger statusCode) {
         [self showError:error];
     }];
+
 }
 
 - (void)initialize {
@@ -91,24 +97,23 @@ static CGFloat const EstimatedCellHeight = 100.0f;
         rows = self.dataArray.count;
     }
     return rows;
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     if (indexPath.section == 0) {
         XFExpressDetailsFirstLineTVCell *cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFExpressDetailsFirstLineTVCell class]) owner:nil options:nil] lastObject];
-        if ([self.orderStatus isEqualToString:@"007"]) {
+        if ([self.express.progress isEqualToString:@"007"]) {
             cell.expressStatusLabel.text = @"未发货";
-        } else if ([self.orderStatus isEqualToString:@"008"]) {
+        } else if ([self.express.progress isEqualToString:@"008"]) {
             cell.expressStatusLabel.text = @"已发货";
-        } else if ([self.orderStatus isEqualToString:@"009"]) {
+        } else if ([self.express.progress isEqualToString:@"009"]) {
             cell.expressStatusLabel.text = @"配送完成";
         }
         return cell;
     } else {
         XFExpressDetailsTimeLineTVCell *cell = [tableView dequeueReusableCellWithIdentifier:viewExpressTimeLineTVCellID forIndexPath:indexPath];
-        XFExpress *express = self.dataArray[indexPath.row];
+        XFExpressList *express = self.dataArray[indexPath.row];
         if (indexPath.row == 0) {
             express.first = YES;
         } else  {

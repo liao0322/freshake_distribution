@@ -16,6 +16,10 @@
 
 #define KEY_RESULT @"result"
 
+#define KEY_EXPRESS_LIST @"expresslist"
+
+#define KEY_EXPRESS @"express"
+
 /**
  * 员工及用户编码
  */

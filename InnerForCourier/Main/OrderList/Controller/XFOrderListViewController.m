@@ -250,7 +250,8 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
     footerView.viewOrderDetailsBlock = ^{
         
         XFOrderDetailsViewController *orderDetailsVC = [XFOrderDetailsViewController new];
-        orderDetailsVC.originalNo = order.orderNo;
+        orderDetailsVC.originalNo = order.originalNo;
+        orderDetailsVC.originalId = order.originalId;
         orderDetailsVC.orderStatus = self.orderStatus;
         [self.navigationController pushViewController:orderDetailsVC animated:YES];
 

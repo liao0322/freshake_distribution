@@ -111,7 +111,7 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
             cell.appointmentTimeLabel.text = [NSString stringWithString:self.orderDetails.DeliveryTime defaultValue:defaultString];
             cell.remarkLabel.text = [NSString stringWithString:self.orderDetails.message defaultValue:defaultString];
             cell.viewExpressBlock = ^{
-                XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOrderStatus:self.orderStatus originalNo:self.orderDetails.order_no];
+                XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOrderStatus:self.orderStatus originalNo:self.originalNo];
                 [self.navigationController pushViewController:viewExpressVC animated:YES];
                 
             };
@@ -131,7 +131,7 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
         cell.appointmentTimeLabel.text = [NSString stringWithString:self.orderDetails.picktime defaultValue:defaultString];
         cell.remarkLabel.text = [NSString stringWithString:self.orderDetails.message defaultValue:defaultString];
         cell.viewExpressBlock = ^{
-            XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOrderStatus:self.orderStatus originalNo:self.orderDetails.order_no];
+            XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOrderStatus:self.orderStatus originalNo:self.originalNo];
             [self.navigationController pushViewController:viewExpressVC animated:YES];
         };
         return cell;
@@ -157,7 +157,6 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
         
     } else if (section == 4) {
         XFOrderDetailsBasicInfoCell *cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFOrderDetailsBasicInfoCell class]) owner:nil options:nil] lastObject];
-
 
         cell.postageLabel.text = [NSString stringWithString:[NSString stringWithFormat:@"￥%.2f", [self.orderDetails.express_fee floatValue]] defaultValue:@"￥0.00"];
         cell.totalPriceLabel.text = [NSString stringWithString:[NSString stringWithFormat:@"￥%.2f", [self.orderDetails.order_amount floatValue]] defaultValue:@"￥0.00"];
@@ -198,10 +197,9 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
 - (void)requestData {
     [super requestData];
     [XFProgressHUD showLoading];
-    [XFRequestOrderCenter orderDetailsWithOrderId:self.originalNo success:^(XFOrderDetailsModel *orderDetailsModel) {
+    [XFRequestOrderCenter orderDetailsWithOrderId:self.originalId success:^(XFOrderDetailsModel *orderDetailsModel) {
         [XFProgressHUD dismiss];
         orderDetailsModel.express_id = @"1";
-//        orderDetailsModel.InvoiceTitle = @"这是发票抬头";
         if (!orderDetailsModel) {
             return;
         }

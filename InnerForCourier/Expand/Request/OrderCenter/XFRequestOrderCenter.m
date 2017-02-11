@@ -9,8 +9,9 @@
 #import "XFRequestOrderCenter.h"
 #import "XFOrder.h"
 #import "XFUser.h"
-#import "XFExpress.h"
+#import "XFExpressList.h"
 #import "XFOrderDetailsModel.h"
+#import "XFExpress.h"
 
 @implementation XFRequestOrderCenter
 
@@ -109,7 +110,7 @@
 + (void)orderExpressWithOriginalNo:(NSString *)originalNo
                         sourceCode:(NSString *)sourceCode
                            syscode:(NSString *)syscode
-                           success:(SuccessWithArray)success
+                           success:(void(^)(NSArray *dataArray, NSInteger statusCode, XFExpress *express))success
                            failure:(Failed)failure {
     NSDictionary *parametersDict = @{
                                      @"originalNo": originalNo,
@@ -128,18 +129,20 @@
         if (![code isEqualToString:@"0"]) {
             [self handleCode:code];
             if (success) {
-                success(nil, statusCode);
+                success(nil, statusCode, nil);
             }
             return;
         }
         if (!dictData[KEY_RESULT]) {
             if (success) {
-                success(nil, statusCode);
+                success(nil, statusCode, nil);
             }
         }
-        NSArray *dataArray = [XFExpress mj_objectArrayWithKeyValuesArray:dictData[KEY_RESULT]];
+        NSArray *dataArray = [XFExpressList mj_objectArrayWithKeyValuesArray:dictData[KEY_RESULT][KEY_EXPRESS_LIST]];
+        XFExpress *express = [XFExpress mj_objectWithKeyValues:dictData[KEY_RESULT][KEY_EXPRESS]];
+        
         if (success) {
-            success(dataArray, statusCode);
+            success(dataArray, statusCode, express);
         }
     } failure:^(NSError *error, NSInteger statusCode) {
         if (failure) {
@@ -148,6 +151,8 @@
     }];
     
 }
+
+
 
 + (void)orderDetailsWithOrderId:(NSString *)orderId
                         success:(void (^)(XFOrderDetailsModel *orderDetailsModel))success
@@ -158,6 +163,7 @@
                                      };
     [XFNetworking GET:@"http://h5.freshake.cn/api/Phone/Fifth/index.aspx" parameters:parametersDict success:^(id responseObject, NSInteger statusCode) {
         NSDictionary *dict = [self dictWithData:responseObject];
+
         if (!dict) {
             [XFProgressHUD showMessage:@"数据解析失败"];
             return;

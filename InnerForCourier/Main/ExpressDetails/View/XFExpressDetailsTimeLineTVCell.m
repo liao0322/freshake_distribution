@@ -9,7 +9,7 @@
 #import "XFExpressDetailsTimeLineTVCell.h"
 #import "TTTAttributedLabel.h"
 #import "UIColor+Extension.h"
-#import "XFExpress.h"
+#import "XFExpressList.h"
 
 @interface XFExpressDetailsTimeLineTVCell ()<TTTAttributedLabelDelegate>
 
@@ -41,7 +41,7 @@
     return YES;
 }
 
-- (void)setModel:(XFExpress *)model {
+- (void)setModel:(XFExpressList *)model {
     _model = model;
     self.dateLabel.text = _model.operTime;
     if (_model.isFirst) {
