@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, XFColor) {
-    XFColorDomina            = 0x007aff,         // 主色调
+    XFColorDomina            = 0x35afbc,         // 主色调
     XFColorButtonHighlighted = 0x32bebf,         // 按钮高亮色
     XFColorNavBarBG          = 0xf5f6f8,         // 导航栏背景色
     XFColorSeparator         = 0xdcdcdc,         // 分割线颜色
@@ -19,8 +19,8 @@ typedef NS_ENUM(NSInteger, XFColor) {
     XFColorTextDomina        = 0x4a4a4a,         // 主文字颜色
     XFColorTextAssistantA    = 0x9b9b9b,         // 副文字颜色
     XFColorTextAssistantB    = 0xacacac,         // 副文字颜色
-    
-    
+    // 0x35afbc
+    // 0x85bd32
     // 一些比较好看的颜色
     XFColorYellow            = 0xf5d50b,
     XFColorLightYellow       = 0xfcff4d,
@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger, XFColor) {
     
     // 一些UISDK默认色
     XFColorDefaultBlue       = 0x007aff,
+    XFColorDefaultViewBG     = 0xebebf1
     
     
 };

@@ -14,7 +14,13 @@
 
 @implementation XFNavigationController
 
-
++ (void)initialize {
+    
+    UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[XFNavigationController class]]];
+    navBar.barTintColor = [UIColor colorDomina];
+    
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

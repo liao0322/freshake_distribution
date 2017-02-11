@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class XFGoods;
+@class XFOrderDetailsGoodsModel;
 
 @interface XFOrderListTVCell : UITableViewCell
 
-@property (copy, nonatomic) NSDictionary *dict;
-
+@property (nonatomic) XFGoods *model;
+@property (nonatomic) XFOrderDetailsGoodsModel *orderDetailsGoodsModel;
 @end

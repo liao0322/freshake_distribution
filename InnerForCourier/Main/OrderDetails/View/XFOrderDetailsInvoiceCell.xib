@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="XFOrderDetailsInvoiceCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xkg-28-Jtg">
+                        <rect key="frame" x="0.0" y="44" width="320" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="jAZ-41-WUZ"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gct-PS-xTQ">
+                        <rect key="frame" x="0.0" y="88.5" width="320" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="wjp-TI-agn"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发票信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7v-bD-xId">
+                        <rect key="frame" x="15" y="11.5" width="58" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="0vV-S8-U4V"/>
+                            <constraint firstAttribute="width" constant="58" id="NEf-te-cQs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发票抬头" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtM-iP-9jN">
+                        <rect key="frame" x="15" y="56" width="58" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发票内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReO-jh-r7N">
+                        <rect key="frame" x="15" y="100.5" width="58" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h51-Cc-9yH">
+                        <rect key="frame" x="83" y="56" width="222" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuT-Fr-4hF">
+                        <rect key="frame" x="83" y="13" width="222" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rk9-pC-2Gy">
+                        <rect key="frame" x="83" y="101" width="222" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Xkg-28-Jtg" secondAttribute="trailing" id="1dz-f6-ESV"/>
+                    <constraint firstItem="fuT-Fr-4hF" firstAttribute="leading" secondItem="H7v-bD-xId" secondAttribute="trailing" constant="10" id="1rI-KY-Oxi"/>
+                    <constraint firstItem="Xkg-28-Jtg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4Zg-uo-PjU"/>
+                    <constraint firstItem="H7v-bD-xId" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11.5" id="5Hw-ap-ct9"/>
+                    <constraint firstItem="gct-PS-xTQ" firstAttribute="top" secondItem="Xkg-28-Jtg" secondAttribute="bottom" constant="44" id="7K0-yr-Kjp"/>
+                    <constraint firstItem="gct-PS-xTQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="C32-Ql-xsy"/>
+                    <constraint firstAttribute="trailing" secondItem="fuT-Fr-4hF" secondAttribute="trailing" constant="15" id="Lll-RE-bVc"/>
+                    <constraint firstItem="h51-Cc-9yH" firstAttribute="leading" secondItem="fuT-Fr-4hF" secondAttribute="leading" id="QQ0-Qt-YWY"/>
+                    <constraint firstItem="h51-Cc-9yH" firstAttribute="centerY" secondItem="xtM-iP-9jN" secondAttribute="centerY" id="RZC-4t-2uo"/>
+                    <constraint firstItem="Rk9-pC-2Gy" firstAttribute="centerY" secondItem="ReO-jh-r7N" secondAttribute="centerY" id="VS8-Et-DVB"/>
+                    <constraint firstItem="Rk9-pC-2Gy" firstAttribute="leading" secondItem="fuT-Fr-4hF" secondAttribute="leading" id="YZI-aQ-TPc"/>
+                    <constraint firstItem="Xkg-28-Jtg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="44" id="Z1h-uU-pKx"/>
+                    <constraint firstItem="H7v-bD-xId" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="cIw-do-huA"/>
+                    <constraint firstItem="xtM-iP-9jN" firstAttribute="leading" secondItem="H7v-bD-xId" secondAttribute="leading" id="fRX-yv-lSb"/>
+                    <constraint firstAttribute="trailing" secondItem="gct-PS-xTQ" secondAttribute="trailing" id="jLH-Pg-R8R"/>
+                    <constraint firstItem="Rk9-pC-2Gy" firstAttribute="trailing" secondItem="fuT-Fr-4hF" secondAttribute="trailing" id="l9J-pw-hkY"/>
+                    <constraint firstItem="h51-Cc-9yH" firstAttribute="trailing" secondItem="fuT-Fr-4hF" secondAttribute="trailing" id="lGG-Ik-hrb"/>
+                    <constraint firstItem="ReO-jh-r7N" firstAttribute="leading" secondItem="xtM-iP-9jN" secondAttribute="leading" id="mPu-aU-Yz0"/>
+                    <constraint firstItem="fuT-Fr-4hF" firstAttribute="centerY" secondItem="H7v-bD-xId" secondAttribute="centerY" id="s34-bq-BFc"/>
+                    <constraint firstItem="ReO-jh-r7N" firstAttribute="top" secondItem="gct-PS-xTQ" secondAttribute="bottom" constant="11.5" id="tK4-81-oSR"/>
+                    <constraint firstItem="xtM-iP-9jN" firstAttribute="top" secondItem="Xkg-28-Jtg" secondAttribute="bottom" constant="11.5" id="xeQ-Sk-145"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="invoiceContentLabel" destination="Rk9-pC-2Gy" id="NTY-Fv-M6Z"/>
+                <outlet property="invoiceTitleLabel" destination="h51-Cc-9yH" id="WoE-Yz-AMo"/>
+                <outlet property="invoiceTypeLabel" destination="fuT-Fr-4hF" id="ugt-WT-Nld"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

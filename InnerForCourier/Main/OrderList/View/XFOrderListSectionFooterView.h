@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class XFOrder;
 
 @interface XFOrderListSectionFooterView : UITableViewHeaderFooterView
+
+@property (nonatomic) XFOrder *model;
+
+@property (nonatomic) void(^viewOrderDetailsBlock)();
+@property (nonatomic) void(^viewExpressBlock)();
+
 
 @end

@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    if ([XFKVCPersistence contain:@"account"]) {
+    if ([XFKVCPersistence contain:KEY_ACCOUNT]) {
         [self toMain];
     } else {
         [self toLogin];
@@ -54,7 +54,7 @@
         [UIView setAnimationsEnabled:oldState];
     };
     [UIView transitionWithView:window
-                      duration:0.7f
+                      duration:0.4f
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:animation
                     completion:nil];

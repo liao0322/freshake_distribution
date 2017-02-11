@@ -12,14 +12,34 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+#ifdef __OBJC__
+
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+#import <Masonry.h>
+
 #import "XFKVCPersistence.h"
 #import "UIColor+Project.h"
+#import "UIImageView+WebCache.h"
+#import "UIImage+Create.h"
+#import <AFNetworking.h>
+#import "XFProgressHUD.h"
 
+
+#import "XFMemoryStorage.h"
+
+// print
 #ifdef DEBUG
 #define NSLog(...) NSLog(@"%@", [NSString stringWithFormat:__VA_ARGS__])
 #else
 #define NSLog(...)
 #endif
+
+
+#endif
+
+
+
 
 
 #endif /* PrefixHeader_pch */

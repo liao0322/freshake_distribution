@@ -15,6 +15,37 @@
 		FE474E0F1E2DEADD0005CD98 /* InnerForCourierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE474E0E1E2DEADD0005CD98 /* InnerForCourierTests.m */; };
 		FE474E1A1E2DEADD0005CD98 /* InnerForCourierUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE474E191E2DEADD0005CD98 /* InnerForCourierUITests.m */; };
 		FE72EFAE1E44757200584C1C /* XFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE72EFAD1E44757200584C1C /* XFLoginViewController.m */; };
+		FEA20E941E4D6FF200FAD315 /* XFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */; };
+		FEAD148B1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14891E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.m */; };
+		FEAD148C1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAD148A1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.xib */; };
+		FEAD148F1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD148E1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.m */; };
+		FEAD14941E49B5C5000962D3 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14931E49B5C5000962D3 /* TTTAttributedLabel.m */; };
+		FEAD149A1E49CFFB000962D3 /* XFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14991E49CFFB000962D3 /* XFModel.m */; };
+		FEAD149D1E49D01A000962D3 /* XFOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD149C1E49D01A000962D3 /* XFOrder.m */; };
+		FEAD14A01E49D69B000962D3 /* XFView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD149F1E49D69B000962D3 /* XFView.m */; };
+		FEAD14A41E49E2F8000962D3 /* XFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14A31E49E2F8000962D3 /* XFUser.m */; };
+		FEAD14A81E4AA3D9000962D3 /* XFMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14A71E4AA3D9000962D3 /* XFMemoryStorage.m */; };
+		FEAD14AD1E4ABE76000962D3 /* XFGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14AC1E4ABE76000962D3 /* XFGoods.m */; };
+		FEAD14B11E4AFD41000962D3 /* XFExpress.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14B01E4AFD41000962D3 /* XFExpress.m */; };
+		FEAD14B61E4B1D60000962D3 /* XFOrderDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14B51E4B1D60000962D3 /* XFOrderDetailsModel.m */; };
+		FEAD14BA1E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14B81E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.m */; };
+		FEAD14BB1E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAD14B91E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.xib */; };
+		FEAD14BF1E4BFCA6000962D3 /* XFRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14BE1E4BFCA6000962D3 /* XFRow.m */; };
+		FEAD14C31E4C0041000962D3 /* XFOrderDetailsAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14C11E4C0041000962D3 /* XFOrderDetailsAddressCell.m */; };
+		FEAD14C41E4C0041000962D3 /* XFOrderDetailsAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAD14C21E4C0041000962D3 /* XFOrderDetailsAddressCell.xib */; };
+		FEAD14C81E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14C61E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.m */; };
+		FEAD14C91E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAD14C71E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.xib */; };
+		FEAD14CD1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14CB1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.m */; };
+		FEAD14CE1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAD14CC1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.xib */; };
+		FEAD14D21E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14D01E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.m */; };
+		FEAD14D31E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAD14D11E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.xib */; };
+		FEAD14D61E4C2C7A000962D3 /* XFOrderDetailsGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14D51E4C2C7A000962D3 /* XFOrderDetailsGoodsModel.m */; };
+		FEAD14DD1E4C338B000962D3 /* NSString+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14DC1E4C338B000962D3 /* NSString+Conversion.m */; };
+		FEAD14E41E4C339D000962D3 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14DF1E4C339D000962D3 /* NSString+Extension.m */; };
+		FEAD14E51E4C339D000962D3 /* NSString+FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14E11E4C339D000962D3 /* NSString+FilePath.m */; };
+		FEAD14E61E4C339D000962D3 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14E31E4C339D000962D3 /* NSString+Hash.m */; };
+		FEAD14EA1E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14E81E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.m */; };
+		FEAD14EB1E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAD14E91E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.xib */; };
 		FEFF69991E456A9200639DBE /* XFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF69981E456A9200639DBE /* XFNavigationController.m */; };
 		FEFF699D1E456F5900639DBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF699C1E456F5900639DBE /* AppDelegate.m */; };
 		FEFF69B41E45743600639DBE /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF69AB1E45743600639DBE /* UIColor+Extension.m */; };
@@ -32,6 +63,13 @@
 		FEFF69EE1E45C05500639DBE /* XFOrderListTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEFF69EC1E45C05500639DBE /* XFOrderListTVCell.xib */; };
 		FEFF69F11E45C29400639DBE /* XFOrderListSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF69F01E45C29400639DBE /* XFOrderListSectionHeaderView.m */; };
 		FEFF69F41E45C2E600639DBE /* XFOrderListSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF69F31E45C2E600639DBE /* XFOrderListSectionFooterView.m */; };
+		FEFF69F81E48683C00639DBE /* XFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF69F71E48683C00639DBE /* XFNetworking.m */; };
+		FEFF69FC1E48908100639DBE /* URLBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF69FB1E48908100639DBE /* URLBase.m */; };
+		FEFF6A001E4890D100639DBE /* URLOrderCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF69FF1E4890D100639DBE /* URLOrderCenter.m */; };
+		FEFF6A051E49551500639DBE /* XFBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF6A041E49551500639DBE /* XFBaseRequest.m */; };
+		FEFF6A081E49576600639DBE /* XFRequestOrderCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF6A071E49576600639DBE /* XFRequestOrderCenter.m */; };
+		FEFF6A0B1E495B0600639DBE /* XFProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF6A0A1E495B0600639DBE /* XFProgressHUD.m */; };
+		FEFF6A0F1E49680300639DBE /* NSObject+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFF6A0E1E49680300639DBE /* NSObject+Ext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +108,63 @@
 		FE72EFAC1E44757200584C1C /* XFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFLoginViewController.h; sourceTree = "<group>"; };
 		FE72EFAD1E44757200584C1C /* XFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFLoginViewController.m; sourceTree = "<group>"; };
 		FE72EFB31E44759A00584C1C /* XFColorDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFColorDefine.h; sourceTree = "<group>"; };
+		FEA20E921E4D6FF200FAD315 /* XFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFTableViewCell.h; sourceTree = "<group>"; };
+		FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFTableViewCell.m; sourceTree = "<group>"; };
+		FEAD14881E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressDetailsFirstLineTVCell.h; sourceTree = "<group>"; };
+		FEAD14891E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFExpressDetailsFirstLineTVCell.m; sourceTree = "<group>"; };
+		FEAD148A1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFExpressDetailsFirstLineTVCell.xib; sourceTree = "<group>"; };
+		FEAD148D1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressDetailsTimeLineTVCell.h; sourceTree = "<group>"; };
+		FEAD148E1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFExpressDetailsTimeLineTVCell.m; sourceTree = "<group>"; };
+		FEAD14921E49B5C5000962D3 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		FEAD14931E49B5C5000962D3 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		FEAD14981E49CFFB000962D3 /* XFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFModel.h; sourceTree = "<group>"; };
+		FEAD14991E49CFFB000962D3 /* XFModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFModel.m; sourceTree = "<group>"; };
+		FEAD149B1E49D01A000962D3 /* XFOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrder.h; sourceTree = "<group>"; };
+		FEAD149C1E49D01A000962D3 /* XFOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrder.m; sourceTree = "<group>"; };
+		FEAD149E1E49D69B000962D3 /* XFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFView.h; sourceTree = "<group>"; };
+		FEAD149F1E49D69B000962D3 /* XFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFView.m; sourceTree = "<group>"; };
+		FEAD14A21E49E2F8000962D3 /* XFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFUser.h; sourceTree = "<group>"; };
+		FEAD14A31E49E2F8000962D3 /* XFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFUser.m; sourceTree = "<group>"; };
+		FEAD14A61E4AA3D9000962D3 /* XFMemoryStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFMemoryStorage.h; sourceTree = "<group>"; };
+		FEAD14A71E4AA3D9000962D3 /* XFMemoryStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFMemoryStorage.m; sourceTree = "<group>"; };
+		FEAD14A91E4AA3EC000962D3 /* XFMemoryStorageKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFMemoryStorageKeys.h; sourceTree = "<group>"; };
+		FEAD14AA1E4AAFA4000962D3 /* XFRequestOrderCenterKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFRequestOrderCenterKeys.h; sourceTree = "<group>"; };
+		FEAD14AB1E4ABE76000962D3 /* XFGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFGoods.h; sourceTree = "<group>"; };
+		FEAD14AC1E4ABE76000962D3 /* XFGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFGoods.m; sourceTree = "<group>"; };
+		FEAD14AF1E4AFD41000962D3 /* XFExpress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpress.h; sourceTree = "<group>"; };
+		FEAD14B01E4AFD41000962D3 /* XFExpress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFExpress.m; sourceTree = "<group>"; };
+		FEAD14B41E4B1D60000962D3 /* XFOrderDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderDetailsModel.h; sourceTree = "<group>"; };
+		FEAD14B51E4B1D60000962D3 /* XFOrderDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderDetailsModel.m; sourceTree = "<group>"; };
+		FEAD14B71E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderDetailsOrderNumberTVCell.h; sourceTree = "<group>"; };
+		FEAD14B81E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderDetailsOrderNumberTVCell.m; sourceTree = "<group>"; };
+		FEAD14B91E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFOrderDetailsOrderNumberTVCell.xib; sourceTree = "<group>"; };
+		FEAD14BD1E4BFCA6000962D3 /* XFRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFRow.h; sourceTree = "<group>"; };
+		FEAD14BE1E4BFCA6000962D3 /* XFRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFRow.m; sourceTree = "<group>"; };
+		FEAD14C01E4C0041000962D3 /* XFOrderDetailsAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderDetailsAddressCell.h; sourceTree = "<group>"; };
+		FEAD14C11E4C0041000962D3 /* XFOrderDetailsAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderDetailsAddressCell.m; sourceTree = "<group>"; };
+		FEAD14C21E4C0041000962D3 /* XFOrderDetailsAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFOrderDetailsAddressCell.xib; sourceTree = "<group>"; };
+		FEAD14C51E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderDetailsNoInvoiceCell.h; sourceTree = "<group>"; };
+		FEAD14C61E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderDetailsNoInvoiceCell.m; sourceTree = "<group>"; };
+		FEAD14C71E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFOrderDetailsNoInvoiceCell.xib; sourceTree = "<group>"; };
+		FEAD14CA1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderDetailsInvoiceCell.h; sourceTree = "<group>"; };
+		FEAD14CB1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderDetailsInvoiceCell.m; sourceTree = "<group>"; };
+		FEAD14CC1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFOrderDetailsInvoiceCell.xib; sourceTree = "<group>"; };
+		FEAD14CF1E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderDetailsBasicInfoCell.h; sourceTree = "<group>"; };
+		FEAD14D01E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderDetailsBasicInfoCell.m; sourceTree = "<group>"; };
+		FEAD14D11E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFOrderDetailsBasicInfoCell.xib; sourceTree = "<group>"; };
+		FEAD14D41E4C2C7A000962D3 /* XFOrderDetailsGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderDetailsGoodsModel.h; sourceTree = "<group>"; };
+		FEAD14D51E4C2C7A000962D3 /* XFOrderDetailsGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderDetailsGoodsModel.m; sourceTree = "<group>"; };
+		FEAD14DB1E4C338B000962D3 /* NSString+Conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Conversion.h"; sourceTree = "<group>"; };
+		FEAD14DC1E4C338B000962D3 /* NSString+Conversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Conversion.m"; sourceTree = "<group>"; };
+		FEAD14DE1E4C339D000962D3 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		FEAD14DF1E4C339D000962D3 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		FEAD14E01E4C339D000962D3 /* NSString+FilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FilePath.h"; sourceTree = "<group>"; };
+		FEAD14E11E4C339D000962D3 /* NSString+FilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FilePath.m"; sourceTree = "<group>"; };
+		FEAD14E21E4C339D000962D3 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		FEAD14E31E4C339D000962D3 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		FEAD14E71E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderDetailsDeliverAddressTVCell.h; sourceTree = "<group>"; };
+		FEAD14E81E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderDetailsDeliverAddressTVCell.m; sourceTree = "<group>"; };
+		FEAD14E91E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFOrderDetailsDeliverAddressTVCell.xib; sourceTree = "<group>"; };
 		FEFF69971E456A9200639DBE /* XFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFNavigationController.h; sourceTree = "<group>"; };
 		FEFF69981E456A9200639DBE /* XFNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFNavigationController.m; sourceTree = "<group>"; };
 		FEFF699B1E456F5900639DBE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +198,22 @@
 		FEFF69F01E45C29400639DBE /* XFOrderListSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderListSectionHeaderView.m; sourceTree = "<group>"; };
 		FEFF69F21E45C2E600639DBE /* XFOrderListSectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderListSectionFooterView.h; sourceTree = "<group>"; };
 		FEFF69F31E45C2E600639DBE /* XFOrderListSectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderListSectionFooterView.m; sourceTree = "<group>"; };
+		FEFF69F61E48683C00639DBE /* XFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFNetworking.h; sourceTree = "<group>"; };
+		FEFF69F71E48683C00639DBE /* XFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFNetworking.m; sourceTree = "<group>"; };
+		FEFF69FA1E48908100639DBE /* URLBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLBase.h; sourceTree = "<group>"; };
+		FEFF69FB1E48908100639DBE /* URLBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLBase.m; sourceTree = "<group>"; };
+		FEFF69FE1E4890D100639DBE /* URLOrderCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLOrderCenter.h; sourceTree = "<group>"; };
+		FEFF69FF1E4890D100639DBE /* URLOrderCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLOrderCenter.m; sourceTree = "<group>"; };
+		FEFF6A031E49551500639DBE /* XFBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFBaseRequest.h; sourceTree = "<group>"; };
+		FEFF6A041E49551500639DBE /* XFBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFBaseRequest.m; sourceTree = "<group>"; };
+		FEFF6A061E49576600639DBE /* XFRequestOrderCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFRequestOrderCenter.h; sourceTree = "<group>"; };
+		FEFF6A071E49576600639DBE /* XFRequestOrderCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFRequestOrderCenter.m; sourceTree = "<group>"; };
+		FEFF6A091E495B0600639DBE /* XFProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFProgressHUD.h; sourceTree = "<group>"; };
+		FEFF6A0A1E495B0600639DBE /* XFProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFProgressHUD.m; sourceTree = "<group>"; };
+		FEFF6A0C1E49637600639DBE /* XFRequestKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFRequestKeys.h; sourceTree = "<group>"; };
+		FEFF6A0D1E49680300639DBE /* NSObject+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Ext.h"; sourceTree = "<group>"; };
+		FEFF6A0E1E49680300639DBE /* NSObject+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Ext.m"; sourceTree = "<group>"; };
+		FEFF6A101E496DDE00639DBE /* XFKVCPersistenceKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFKVCPersistenceKeys.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +288,7 @@
 				FE72EFA91E44757200584C1C /* Main */,
 				FE72EFA41E4470DF00584C1C /* Expand */,
 				FEFF699E1E456F9E00639DBE /* Resources */,
+				FEAD14901E49B5C5000962D3 /* Vender */,
 				FE474DFD1E2DEADC0005CD98 /* Main.storyboard */,
 				FE474E021E2DEADC0005CD98 /* LaunchScreen.storyboard */,
 				FEFF69B81E45747100639DBE /* PrefixHeader.pch */,
@@ -217,6 +329,7 @@
 				FE72EFB21E44759A00584C1C /* Define */,
 				FEFF69A21E4572A000639DBE /* Network */,
 				FEFF69A31E4572A000639DBE /* Persistence */,
+				FEFF6A011E4954A800639DBE /* Request */,
 				FEFF69A41E4572A000639DBE /* Tools */,
 				FEFF69A51E4572A000639DBE /* Widgets */,
 				FE72EFA51E4470DF00584C1C /* Categories */,
@@ -227,6 +340,9 @@
 		FE72EFA51E4470DF00584C1C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				FEFF6A0D1E49680300639DBE /* NSObject+Ext.h */,
+				FEFF6A0E1E49680300639DBE /* NSObject+Ext.m */,
+				FEAD14DA1E4C338B000962D3 /* NSString */,
 				FEFF69A91E45743600639DBE /* UIColor */,
 				FEFF69AE1E45743600639DBE /* UIImage */,
 				FEFF69B11E45743600639DBE /* UIView */,
@@ -250,6 +366,7 @@
 		FE72EFAA1E44757200584C1C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				FEAD14A11E49E2D4000962D3 /* Model */,
 				FE72EFAB1E44757200584C1C /* Controller */,
 			);
 			path = Login;
@@ -268,8 +385,158 @@
 			isa = PBXGroup;
 			children = (
 				FE72EFB31E44759A00584C1C /* XFColorDefine.h */,
+				FEFF69F91E486DF600639DBE /* URL */,
 			);
 			path = Define;
+			sourceTree = "<group>";
+		};
+		FEAD147F1E49B3FC000962D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14881E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.h */,
+				FEAD14891E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.m */,
+				FEAD148A1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.xib */,
+				FEAD148D1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.h */,
+				FEAD148E1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEAD14901E49B5C5000962D3 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14911E49B5C5000962D3 /* TTTAttributedLabel */,
+			);
+			name = Vender;
+			path = Resources/Vender;
+			sourceTree = "<group>";
+		};
+		FEAD14911E49B5C5000962D3 /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14921E49B5C5000962D3 /* TTTAttributedLabel.h */,
+				FEAD14931E49B5C5000962D3 /* TTTAttributedLabel.m */,
+			);
+			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
+		FEAD14951E49CFBC000962D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD149B1E49D01A000962D3 /* XFOrder.h */,
+				FEAD149C1E49D01A000962D3 /* XFOrder.m */,
+				FEAD14AB1E4ABE76000962D3 /* XFGoods.h */,
+				FEAD14AC1E4ABE76000962D3 /* XFGoods.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEAD14961E49CFDE000962D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14981E49CFFB000962D3 /* XFModel.h */,
+				FEAD14991E49CFFB000962D3 /* XFModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEAD14971E49CFDE000962D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD149E1E49D69B000962D3 /* XFView.h */,
+				FEAD149F1E49D69B000962D3 /* XFView.m */,
+				FEA20E921E4D6FF200FAD315 /* XFTableViewCell.h */,
+				FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEAD14A11E49E2D4000962D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14A21E49E2F8000962D3 /* XFUser.h */,
+				FEAD14A31E49E2F8000962D3 /* XFUser.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEAD14A51E4AA3C6000962D3 /* XFMemoryStorage */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14A91E4AA3EC000962D3 /* XFMemoryStorageKeys.h */,
+				FEAD14A61E4AA3D9000962D3 /* XFMemoryStorage.h */,
+				FEAD14A71E4AA3D9000962D3 /* XFMemoryStorage.m */,
+			);
+			path = XFMemoryStorage;
+			sourceTree = "<group>";
+		};
+		FEAD14AE1E4AFD24000962D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14AF1E4AFD41000962D3 /* XFExpress.h */,
+				FEAD14B01E4AFD41000962D3 /* XFExpress.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEAD14B21E4B0EDB000962D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14B41E4B1D60000962D3 /* XFOrderDetailsModel.h */,
+				FEAD14B51E4B1D60000962D3 /* XFOrderDetailsModel.m */,
+				FEAD14D41E4C2C7A000962D3 /* XFOrderDetailsGoodsModel.h */,
+				FEAD14D51E4C2C7A000962D3 /* XFOrderDetailsGoodsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEAD14B31E4B0EDB000962D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14B71E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.h */,
+				FEAD14B81E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.m */,
+				FEAD14B91E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.xib */,
+				FEAD14C01E4C0041000962D3 /* XFOrderDetailsAddressCell.h */,
+				FEAD14C11E4C0041000962D3 /* XFOrderDetailsAddressCell.m */,
+				FEAD14C21E4C0041000962D3 /* XFOrderDetailsAddressCell.xib */,
+				FEAD14C51E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.h */,
+				FEAD14C61E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.m */,
+				FEAD14C71E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.xib */,
+				FEAD14CA1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.h */,
+				FEAD14CB1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.m */,
+				FEAD14CC1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.xib */,
+				FEAD14CF1E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.h */,
+				FEAD14D01E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.m */,
+				FEAD14D11E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.xib */,
+				FEAD14E71E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.h */,
+				FEAD14E81E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.m */,
+				FEAD14E91E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEAD14BC1E4BFC9C000962D3 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14BD1E4BFCA6000962D3 /* XFRow.h */,
+				FEAD14BE1E4BFCA6000962D3 /* XFRow.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		FEAD14DA1E4C338B000962D3 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14DB1E4C338B000962D3 /* NSString+Conversion.h */,
+				FEAD14DC1E4C338B000962D3 /* NSString+Conversion.m */,
+				FEAD14DE1E4C339D000962D3 /* NSString+Extension.h */,
+				FEAD14DF1E4C339D000962D3 /* NSString+Extension.m */,
+				FEAD14E01E4C339D000962D3 /* NSString+FilePath.h */,
+				FEAD14E11E4C339D000962D3 /* NSString+FilePath.m */,
+				FEAD14E21E4C339D000962D3 /* NSString+Hash.h */,
+				FEAD14E31E4C339D000962D3 /* NSString+Hash.m */,
+			);
+			path = NSString;
 			sourceTree = "<group>";
 		};
 		FEFF69951E456A6F00639DBE /* Navigation */ = {
@@ -334,6 +601,7 @@
 		FEFF69A21E4572A000639DBE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FEFF69F51E48683C00639DBE /* XFNetworking */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -343,6 +611,7 @@
 			children = (
 				FEFF69B91E45793100639DBE /* XFKVCPersistenceDelegate.h */,
 				FEFF69C21E457A8200639DBE /* XFKVCPersistence */,
+				FEAD14A51E4AA3C6000962D3 /* XFMemoryStorage */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -357,6 +626,8 @@
 		FEFF69A51E4572A000639DBE /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				FEFF6A091E495B0600639DBE /* XFProgressHUD.h */,
+				FEFF6A0A1E495B0600639DBE /* XFProgressHUD.m */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -393,6 +664,7 @@
 		FEFF69C21E457A8200639DBE /* XFKVCPersistence */ = {
 			isa = PBXGroup;
 			children = (
+				FEFF6A101E496DDE00639DBE /* XFKVCPersistenceKeys.h */,
 				FEFF69C31E457A9300639DBE /* XFKVCPersistence.h */,
 				FEFF69C41E457A9300639DBE /* XFKVCPersistence.m */,
 			);
@@ -404,6 +676,7 @@
 			children = (
 				FEFF69C91E459E0B00639DBE /* Controller */,
 				FEFF69E91E45C03500639DBE /* View */,
+				FEAD14951E49CFBC000962D3 /* Model */,
 			);
 			path = OrderList;
 			sourceTree = "<group>";
@@ -412,6 +685,8 @@
 			isa = PBXGroup;
 			children = (
 				FEFF69C81E459DFF00639DBE /* Controller */,
+				FEAD14961E49CFDE000962D3 /* Model */,
+				FEAD14971E49CFDE000962D3 /* View */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -438,6 +713,8 @@
 			isa = PBXGroup;
 			children = (
 				FEFF69D61E45B87D00639DBE /* Controller */,
+				FEAD147F1E49B3FC000962D3 /* View */,
+				FEAD14AE1E4AFD24000962D3 /* Model */,
 			);
 			path = ExpressDetails;
 			sourceTree = "<group>";
@@ -456,6 +733,9 @@
 			isa = PBXGroup;
 			children = (
 				FEFF69D81E45B87D00639DBE /* Controller */,
+				FEAD14B31E4B0EDB000962D3 /* View */,
+				FEAD14B21E4B0EDB000962D3 /* Model */,
+				FEAD14BC1E4BFC9C000962D3 /* Other */,
 			);
 			path = OrderDetails;
 			sourceTree = "<group>";
@@ -482,6 +762,55 @@
 				FEFF69F31E45C2E600639DBE /* XFOrderListSectionFooterView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FEFF69F51E48683C00639DBE /* XFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				FEFF69F61E48683C00639DBE /* XFNetworking.h */,
+				FEFF69F71E48683C00639DBE /* XFNetworking.m */,
+			);
+			path = XFNetworking;
+			sourceTree = "<group>";
+		};
+		FEFF69F91E486DF600639DBE /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				FEFF69FA1E48908100639DBE /* URLBase.h */,
+				FEFF69FB1E48908100639DBE /* URLBase.m */,
+				FEFF69FD1E4890A400639DBE /* OrderCenter */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
+		FEFF69FD1E4890A400639DBE /* OrderCenter */ = {
+			isa = PBXGroup;
+			children = (
+				FEFF69FE1E4890D100639DBE /* URLOrderCenter.h */,
+				FEFF69FF1E4890D100639DBE /* URLOrderCenter.m */,
+			);
+			path = OrderCenter;
+			sourceTree = "<group>";
+		};
+		FEFF6A011E4954A800639DBE /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FEFF6A0C1E49637600639DBE /* XFRequestKeys.h */,
+				FEFF6A031E49551500639DBE /* XFBaseRequest.h */,
+				FEFF6A041E49551500639DBE /* XFBaseRequest.m */,
+				FEFF6A021E4954A800639DBE /* OrderCenter */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		FEFF6A021E4954A800639DBE /* OrderCenter */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD14AA1E4AAFA4000962D3 /* XFRequestOrderCenterKeys.h */,
+				FEFF6A061E49576600639DBE /* XFRequestOrderCenter.h */,
+				FEFF6A071E49576600639DBE /* XFRequestOrderCenter.m */,
+			);
+			path = OrderCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,9 +928,16 @@
 			files = (
 				FEFF69E81E45BB5F00639DBE /* XFOrderDetailsViewController.xib in Resources */,
 				FEFF69E31E45BB4D00639DBE /* XFExpressDetailsViewController.xib in Resources */,
+				FEAD14C91E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.xib in Resources */,
 				FE474E041E2DEADC0005CD98 /* LaunchScreen.storyboard in Resources */,
+				FEAD14BB1E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.xib in Resources */,
+				FEAD148C1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.xib in Resources */,
+				FEAD14EB1E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.xib in Resources */,
+				FEAD14D31E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.xib in Resources */,
 				FE474E011E2DEADC0005CD98 /* Assets.xcassets in Resources */,
 				FEFF69EE1E45C05500639DBE /* XFOrderListTVCell.xib in Resources */,
+				FEAD14C41E4C0041000962D3 /* XFOrderDetailsAddressCell.xib in Resources */,
+				FEAD14CE1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.xib in Resources */,
 				FE474DFF1E2DEADC0005CD98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,22 +1011,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEAD14BF1E4BFCA6000962D3 /* XFRow.m in Sources */,
+				FEAD14A81E4AA3D9000962D3 /* XFMemoryStorage.m in Sources */,
+				FEAD14E51E4C339D000962D3 /* NSString+FilePath.m in Sources */,
+				FEAD14D61E4C2C7A000962D3 /* XFOrderDetailsGoodsModel.m in Sources */,
+				FEAD14BA1E4BF808000962D3 /* XFOrderDetailsOrderNumberTVCell.m in Sources */,
+				FEFF6A0B1E495B0600639DBE /* XFProgressHUD.m in Sources */,
 				FEFF69B71E45743600639DBE /* UIView+Frame.m in Sources */,
 				FE72EFAE1E44757200584C1C /* XFLoginViewController.m in Sources */,
+				FEFF69FC1E48908100639DBE /* URLBase.m in Sources */,
+				FEAD14A41E49E2F8000962D3 /* XFUser.m in Sources */,
+				FEAD148F1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.m in Sources */,
 				FEFF69991E456A9200639DBE /* XFNavigationController.m in Sources */,
 				FEFF69B61E45743600639DBE /* UIImage+Create.m in Sources */,
+				FEAD14E61E4C339D000962D3 /* NSString+Hash.m in Sources */,
+				FEAD149A1E49CFFB000962D3 /* XFModel.m in Sources */,
 				FEFF69C51E457A9300639DBE /* XFKVCPersistence.m in Sources */,
 				FEFF69E21E45BB4D00639DBE /* XFExpressDetailsViewController.m in Sources */,
+				FEAD14A01E49D69B000962D3 /* XFView.m in Sources */,
+				FEFF6A081E49576600639DBE /* XFRequestOrderCenter.m in Sources */,
 				FEFF69ED1E45C05500639DBE /* XFOrderListTVCell.m in Sources */,
+				FEA20E941E4D6FF200FAD315 /* XFTableViewCell.m in Sources */,
+				FEFF6A0F1E49680300639DBE /* NSObject+Ext.m in Sources */,
+				FEFF6A051E49551500639DBE /* XFBaseRequest.m in Sources */,
 				FEFF69B41E45743600639DBE /* UIColor+Extension.m in Sources */,
+				FEAD14B11E4AFD41000962D3 /* XFExpress.m in Sources */,
 				FEFF69B51E45743600639DBE /* UIColor+Project.m in Sources */,
+				FEAD14D21E4C1503000962D3 /* XFOrderDetailsBasicInfoCell.m in Sources */,
+				FEAD14C81E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.m in Sources */,
+				FEFF69F81E48683C00639DBE /* XFNetworking.m in Sources */,
 				FE474DF61E2DEADC0005CD98 /* main.m in Sources */,
+				FEAD148B1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.m in Sources */,
+				FEAD14B61E4B1D60000962D3 /* XFOrderDetailsModel.m in Sources */,
+				FEAD14CD1E4C1270000962D3 /* XFOrderDetailsInvoiceCell.m in Sources */,
+				FEAD14E41E4C339D000962D3 /* NSString+Extension.m in Sources */,
 				FEFF69F11E45C29400639DBE /* XFOrderListSectionHeaderView.m in Sources */,
+				FEAD14EA1E4C35D3000962D3 /* XFOrderDetailsDeliverAddressTVCell.m in Sources */,
 				FEFF69CC1E459E5C00639DBE /* XFViewController.m in Sources */,
 				FEFF69D31E459EB200639DBE /* XFOrderListViewController.m in Sources */,
 				FEFF699D1E456F5900639DBE /* AppDelegate.m in Sources */,
 				FEFF69F41E45C2E600639DBE /* XFOrderListSectionFooterView.m in Sources */,
+				FEFF6A001E4890D100639DBE /* URLOrderCenter.m in Sources */,
 				FEFF69E71E45BB5F00639DBE /* XFOrderDetailsViewController.m in Sources */,
+				FEAD14DD1E4C338B000962D3 /* NSString+Conversion.m in Sources */,
+				FEAD149D1E49D01A000962D3 /* XFOrder.m in Sources */,
+				FEAD14AD1E4ABE76000962D3 /* XFGoods.m in Sources */,
+				FEAD14C31E4C0041000962D3 /* XFOrderDetailsAddressCell.m in Sources */,
+				FEAD14941E49B5C5000962D3 /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

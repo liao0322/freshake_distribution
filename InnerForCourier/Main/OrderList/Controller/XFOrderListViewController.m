@@ -10,15 +10,31 @@
 #import "XFLoginViewController.h"
 #import "AppDelegate.h"
 #import "XFOrderDetailsViewController.h"
+#import "XFExpressDetailsViewController.h"
 #import "XFOrderListTVCell.h"
 #import "XFOrderListSectionHeaderView.h"
 #import "XFOrderListSectionFooterView.h"
+#import "XFRequestOrderCenter.h"
+#import "XFOrder.h"
+#import "XFGoods.h"
+#import <MJRefresh.h>
+
+#define UNDELIVERY @"007"
+#define ONDELIVERY @"008"
+#define DELIVERY_COMPLETE @"009"
+
+#define PAGE_LIMIT 20
 
 @interface XFOrderListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic) UIRefreshControl *refreshControl;
+@property (nonatomic) NSMutableArray *dataArray;
+@property (copy, nonatomic) NSString *orderStatus;
+@property (nonatomic) MJRefreshAutoNormalFooter *refreshFooter;
+@property (assign, nonatomic) NSInteger page;
+@property (assign, nonatomic) BOOL noMore;
 
 @end
 
@@ -32,49 +48,41 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [XFProgressHUD showLoading];
+    [self refreshData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    if (self.refreshControl.refreshing) {
-        return;
-    }
-    
-    if (self.tableView.contentOffset.y == -64) {
-        [UIView animateWithDuration:0.25
-                              delay:0
-                            options:UIViewAnimationOptionBeginFromCurrentState
-                         animations:^(void){
-                             self.tableView.contentOffset = CGPointMake(0, -self.refreshControl.frame.size.height - 64);
-                         } completion:^(BOOL finished){
-                             [self.refreshControl beginRefreshing];
-                             [self.refreshControl sendActionsForControlEvents:UIControlEventValueChanged];
-                         }];
-    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    self.dataArray = nil;
+    [self.tableView reloadData];
 }
 
 #pragma mark - Override
 
 - (void)initialize {
     [super initialize];
-
+    self.orderStatus = UNDELIVERY;
+    self.page = 1;
+    self.noMore = NO;
 }
 
 - (void)setupViews {
     [super setupViews];
     
     self.tableView.refreshControl = self.refreshControl;
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, -10, 0, 0);
+    self.tableView.mj_footer = self.refreshFooter;
 }
 
 - (void)registerViews {
     [super registerViews];
+    
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XFOrderListTVCell class]) bundle:nil] forCellReuseIdentifier:OrderListTVCellID];
     
     [self.tableView registerClass:[XFOrderListSectionHeaderView class]forHeaderFooterViewReuseIdentifier:OrderListSectionHeaderID];
@@ -85,57 +93,175 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
 #pragma mark - Custom
 
 - (void)refreshData {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
+    self.page = 1;
+    self.noMore = NO;
+    
+    [self.refreshFooter resetNoMoreData];
+    [self requestDataOnPage:self.page refresh:YES];
+    
+}
+
+- (void)loadMoreData {
+    if (self.noMore == YES) { // 没有更多
+        if ([self.refreshFooter isRefreshing]) {
+            [self.refreshFooter endRefreshingWithNoMoreData];
         }
-    });
+    } else {
+        [self requestDataOnPage:(self.page + 1) refresh:NO];
+    }
+    
+}
+
+- (void)requestDidCompleted {
+    if ([self.refreshControl isRefreshing]) {
+        [self.refreshControl endRefreshing];
+    }
+    if ([self.refreshFooter isRefreshing]) {
+        [self.refreshFooter endRefreshing];
+    }
+}
+
+- (void)requestDataOnPage:(NSInteger)page refresh:(BOOL)refresh {
+    [XFRequestOrderCenter orderListWithPageNum:page pageSize:PAGE_LIMIT shopid:[XFKVCPersistence get:KEY_USER_OWNERID] orderStatus:self.orderStatus success:^(NSArray *dataArray, NSInteger statusCode) {
+        [XFProgressHUD dismiss];
+        [self requestDidCompleted];
+        
+        if (statusCode != 200) {
+            [XFProgressHUD showMessage:@"返回异常"];
+            return;
+        }
+        if (dataArray == nil || dataArray.count == 0) {
+            self.noMore = YES;
+            [self.refreshFooter endRefreshingWithNoMoreData];
+            return;
+        }
+        
+        if (refresh) { // 刷新
+            self.dataArray = [dataArray mutableCopy];
+        } else {
+            self.page++;
+            [self.dataArray addObjectsFromArray:dataArray];
+        }
+        if (dataArray.count < PAGE_LIMIT) {
+            self.noMore = YES;
+        }
+        
+        [self.tableView reloadData];
+        
+    } failure:^(NSError *error, NSInteger statusCode) {
+        [self showError:error];
+        [self requestDidCompleted];
+        [self.dataArray removeAllObjects];
+        [self.tableView reloadData];
+    }];
 }
 
 - (IBAction)segmentControlValueChanged:(UISegmentedControl *)sender {
-    NSLog(@"%ld", sender.selectedSegmentIndex);
+    NSInteger selectedIndex = sender.selectedSegmentIndex;
+    if (selectedIndex == 0) {
+        self.orderStatus = UNDELIVERY;
+    } else if (selectedIndex == 1) {
+        self.orderStatus = ONDELIVERY;
+    } else if (selectedIndex == 2) {
+        self.orderStatus = DELIVERY_COMPLETE;
+    }
+    [XFProgressHUD showLoading];
+    [self refreshData];
+
 }
 
 - (IBAction)logout:(id)sender {
+//    [XFKVCPersistence remove:KEY_ACCOUNT];
+//    [XFKVCPersistence remove:KEY_PASSWORD];
+    [XFKVCPersistence clear];
     [[AppDelegate appDelegate] toLogin];
 }
+
+
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    self.refreshFooter.hidden = self.dataArray.count == 0;
+    return self.dataArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    XFOrder *order = self.dataArray[section];
+    return order.goods.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [UITableViewCell new];
+    XFOrder *order = self.dataArray[indexPath.section];
+    XFGoods *goods = order.goods[indexPath.row];
+    
+    XFOrderListTVCell *cell = [tableView dequeueReusableCellWithIdentifier:OrderListTVCellID forIndexPath:indexPath];
+    cell.model = goods;
+    return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    XFOrderDetailsViewController *orderDetailsVC = [XFOrderDetailsViewController new];
-    [self.navigationController pushViewController:orderDetailsVC animated:YES];
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50.0f;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 60.0f;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 125.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 88.0f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    XFOrder *order = self.dataArray[section];
     XFOrderListSectionHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:OrderListSectionHeaderID];
-    headerView.textLabel.text = @"aaa";
-    
-    UIView *view = [UIView new];
-    view.backgroundColor = [UIColor whiteColor];
-    headerView.backgroundView = view;
+    headerView.orderNumber = order.originalNo;
+    headerView.orderStatus = order.orderStatus;
+    headerView.startDeliverBlock = ^{
+        [XFRequestOrderCenter orderOperationWithSyscode:@"002" originalNo:order.originalNo sourceCode:@"1" usercode:[XFKVCPersistence get:KEY_ACCOUNT] bizcode:@"DELV" success:^() {
+            [self.dataArray removeObject:order];
+            [self.tableView reloadData];
+        } failure:^(NSError *error, NSInteger statusCode) {
+            [self showError:error];
+        }];
+    };
+    headerView.deliveryComplete = ^{
+        [XFRequestOrderCenter orderOperationWithSyscode:@"002" originalNo:order.originalNo sourceCode:@"1" usercode:[XFKVCPersistence get:KEY_ACCOUNT] bizcode:@"FINH" success:^() {
+            NSLog(@"");
+            [self.dataArray removeObject:order];
+            [self.tableView reloadData];
+        } failure:^(NSError *error, NSInteger statusCode) {
+            [self showError:error];
+        }];
+    };
     
     return headerView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    XFOrder *order = self.dataArray[section];
+    XFOrderListSectionFooterView *footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:OrderListSectionFooterID];
+    footerView.model = order;
+    
+    footerView.viewOrderDetailsBlock = ^{
+        
+        XFOrderDetailsViewController *orderDetailsVC = [XFOrderDetailsViewController new];
+        orderDetailsVC.originalNo = order.orderNo;
+        orderDetailsVC.orderStatus = self.orderStatus;
+        [self.navigationController pushViewController:orderDetailsVC animated:YES];
+
+    };
+    
+    footerView.viewExpressBlock = ^{
+        XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOrderStatus:self.orderStatus originalNo:order.originalNo];
+        [self.navigationController pushViewController:viewExpressVC animated:YES];
+    };
+    
+    return footerView;
 }
 
 #pragma mark - LazyLoad
@@ -148,5 +274,19 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
     return _refreshControl;
 }
 
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
+
+- (MJRefreshAutoNormalFooter *)refreshFooter {
+    if (!_refreshFooter) {
+        _refreshFooter = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+        _refreshFooter.refreshingTitleHidden = YES;
+    }
+    return _refreshFooter;
+}
 
 @end

@@ -10,4 +10,6 @@
 
 @interface XFExpressDetailsViewController : XFViewController
 
+- (instancetype)initWithOrderStatus:(NSString *)orderStatus originalNo:(NSString *)originalNo;
+
 @end

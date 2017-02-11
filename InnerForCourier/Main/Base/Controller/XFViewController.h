@@ -10,10 +10,14 @@
 
 @interface XFViewController : UIViewController
 
+- (void)requestData;
 - (void)initialize;
 - (void)setupViews;
 - (void)setupNavigationBar;
 - (void)addSubviews;
 - (void)registerViews;
+
+
+- (void)showError:(NSError *)error;
 
 @end

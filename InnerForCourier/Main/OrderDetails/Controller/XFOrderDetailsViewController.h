@@ -10,4 +10,8 @@
 
 @interface XFOrderDetailsViewController : XFViewController
 
+// 订单编号
+@property (copy, nonatomic) NSString *originalNo;
+@property (copy, nonatomic) NSString *orderStatus;
+
 @end

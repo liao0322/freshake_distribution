@@ -17,7 +17,6 @@
 + (UIImage *)imageOriginalWithName:(NSString *)name;
 + (UIImage *)imageOriginalWithImage:(UIImage *)image;
 
-- (UIImage*)imageWithCornerRadius:(CGFloat)radius;
 
 - (UIImage *)circleImage;
 

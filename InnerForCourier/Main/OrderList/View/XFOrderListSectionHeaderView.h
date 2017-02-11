@@ -10,4 +10,10 @@
 
 @interface XFOrderListSectionHeaderView : UITableViewHeaderFooterView
 
+@property (copy, nonatomic) NSString *orderNumber;
+@property (copy, nonatomic) NSString *orderStatus;
+
+@property (nonatomic) void(^startDeliverBlock)();
+@property (nonatomic) void(^deliveryComplete)();
+
 @end

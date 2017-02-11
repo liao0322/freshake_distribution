@@ -10,6 +10,7 @@
 #import "UIImage+Create.h"
 #import "UIColor+Project.h"
 #import "AppDelegate.h"
+#import "XFRequestOrderCenter.h"
 
 
 @interface XFLoginViewController ()
@@ -23,12 +24,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 
 }
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+
+}
+
 - (IBAction)login:(id)sender {
-    
-    [[AppDelegate appDelegate] toMain];
+    [self.view endEditing:YES];
+    NSString *accountString = self.accountTextField.text;
+    NSString *passwordString = self.passwordTextField.text;
+    [XFProgressHUD showLoading];
+    [self loginWithAccount:accountString password:passwordString];
+}
+
+- (void)loginWithAccount:(NSString *)accountString password:(NSString *)passwordString {
+    [XFRequestOrderCenter loginWithAccount:accountString password:passwordString success:^{
+        [XFProgressHUD dismiss];
+        [[AppDelegate appDelegate] toMain];
+    } failure:^(NSError *error, NSInteger statusCode) {
+        [self showError:error];
+    }];
 }
 
 

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "XFKVCPersistenceDelegate.h"
+#import "XFKVCPersistenceKeys.h"
 
 @interface XFKVCPersistence : NSObject<XFKVCPersistenceDelegate>
 
