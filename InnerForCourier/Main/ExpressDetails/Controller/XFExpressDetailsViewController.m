@@ -12,6 +12,7 @@
 #import "XFRequestOrderCenter.h"
 #import "XFExpress.h"
 #import "XFExpressList.h"
+#import "XFExpressNoDataTVCell.h"
 
 #define MARGIN_LEFT 70.0f
 
@@ -25,6 +26,8 @@
 
 @property (nonatomic) XFExpress *express;
 
+@property (copy, nonatomic, readonly) NSDictionary *orderStatusDict;
+
 @end
 
 @implementation XFExpressDetailsViewController
@@ -32,13 +35,13 @@
 static NSString * const viewExpressTimeLineTVCellID = @"viewExpressTimeLineTVCellID";
 static CGFloat const EstimatedCellHeight = 100.0f;
 
-- (instancetype)initWithOrderStatus:(NSString *)orderStatus originalNo:(NSString *)originalNo {
+- (instancetype)initWithOriginalNo:(NSString *)originalNo {
     self = [super init];
     if (!self) return nil;
-    _orderStatus = orderStatus;
     _originalNo = originalNo;
     return self;
 }
+
 
 #pragma mark - LifeCycle
 
@@ -84,17 +87,14 @@ static CGFloat const EstimatedCellHeight = 100.0f;
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSInteger sections = 0;
-    if (self.dataArray.count) {
-        sections = 2;
-    }
+    NSInteger sections = 2;
     return sections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger rows = 1;
     if (section == 1) {
-        rows = self.dataArray.count;
+        rows = self.dataArray.count ? self.dataArray.count : 1;
     }
     return rows;
 }
@@ -103,24 +103,25 @@ static CGFloat const EstimatedCellHeight = 100.0f;
 
     if (indexPath.section == 0) {
         XFExpressDetailsFirstLineTVCell *cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFExpressDetailsFirstLineTVCell class]) owner:nil options:nil] lastObject];
-        if ([self.express.progress isEqualToString:@"007"]) {
-            cell.expressStatusLabel.text = @"未发货";
-        } else if ([self.express.progress isEqualToString:@"008"]) {
-            cell.expressStatusLabel.text = @"已发货";
-        } else if ([self.express.progress isEqualToString:@"009"]) {
-            cell.expressStatusLabel.text = @"配送完成";
-        }
+        cell.expressStatusLabel.text = self.orderStatusDict[self.express.progress];
         return cell;
     } else {
-        XFExpressDetailsTimeLineTVCell *cell = [tableView dequeueReusableCellWithIdentifier:viewExpressTimeLineTVCellID forIndexPath:indexPath];
-        XFExpressList *express = self.dataArray[indexPath.row];
-        if (indexPath.row == 0) {
-            express.first = YES;
-        } else  {
-            express.first = NO;
+        
+        if (self.dataArray.count) {
+            XFExpressDetailsTimeLineTVCell *cell = [tableView dequeueReusableCellWithIdentifier:viewExpressTimeLineTVCellID forIndexPath:indexPath];
+            XFExpressList *express = self.dataArray[indexPath.row];
+            if (indexPath.row == 0) {
+                express.first = YES;
+            } else  {
+                express.first = NO;
+            }
+            cell.model = express;
+            return cell;
+        } else {
+            XFExpressNoDataTVCell *cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFExpressNoDataTVCell class]) owner:nil options:nil] lastObject];
+            return cell;
         }
-        cell.model = express;
-        return cell;
+
     }
 }
 
@@ -145,6 +146,20 @@ static CGFloat const EstimatedCellHeight = 100.0f;
         _dataArray = [NSMutableArray array];
     }
     return _dataArray;
+}
+
+- (NSDictionary *)orderStatusDict {
+    return @{
+             @"003": @"已分仓",
+             @"004": @"已确认",
+             @"005": @"已分拣",
+             @"006": @"已打包",
+             @"007": @"已出库",
+             @"008": @"已发货",
+             @"009": @"已完成",
+             @"010": @"已撤单",
+             
+             };
 }
 
 @end

@@ -111,7 +111,7 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
             cell.appointmentTimeLabel.text = [NSString stringWithString:self.orderDetails.DeliveryTime defaultValue:defaultString];
             cell.remarkLabel.text = [NSString stringWithString:self.orderDetails.message defaultValue:defaultString];
             cell.viewExpressBlock = ^{
-                XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOrderStatus:self.orderStatus originalNo:self.originalNo];
+                XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOriginalNo:self.originalNo];
                 [self.navigationController pushViewController:viewExpressVC animated:YES];
                 
             };
@@ -131,7 +131,7 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
         cell.appointmentTimeLabel.text = [NSString stringWithString:self.orderDetails.picktime defaultValue:defaultString];
         cell.remarkLabel.text = [NSString stringWithString:self.orderDetails.message defaultValue:defaultString];
         cell.viewExpressBlock = ^{
-            XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOrderStatus:self.orderStatus originalNo:self.originalNo];
+            XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOriginalNo:self.originalNo];
             [self.navigationController pushViewController:viewExpressVC animated:YES];
         };
         return cell;
@@ -200,9 +200,7 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
     [XFRequestOrderCenter orderDetailsWithOrderId:self.originalId success:^(XFOrderDetailsModel *orderDetailsModel) {
         [XFProgressHUD dismiss];
         orderDetailsModel.express_id = @"1";
-        if (!orderDetailsModel) {
-            return;
-        }
+        if (!orderDetailsModel) return;
         self.orderDetails = orderDetailsModel;
         [self.tableView reloadData];
     } failure:^(NSError *error, NSInteger statusCode) {

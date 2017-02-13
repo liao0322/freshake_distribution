@@ -258,7 +258,7 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
     };
     
     footerView.viewExpressBlock = ^{
-        XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOrderStatus:self.orderStatus originalNo:order.originalNo];
+        XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOriginalNo:order.originalNo];
         [self.navigationController pushViewController:viewExpressVC animated:YES];
     };
     

@@ -15,6 +15,8 @@
 		FE474E0F1E2DEADD0005CD98 /* InnerForCourierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE474E0E1E2DEADD0005CD98 /* InnerForCourierTests.m */; };
 		FE474E1A1E2DEADD0005CD98 /* InnerForCourierUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE474E191E2DEADD0005CD98 /* InnerForCourierUITests.m */; };
 		FE72EFAE1E44757200584C1C /* XFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE72EFAD1E44757200584C1C /* XFLoginViewController.m */; };
+		FE8CEF9D1E514C1800779B5F /* XFExpressNoDataTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8CEF9B1E514C1800779B5F /* XFExpressNoDataTVCell.m */; };
+		FE8CEF9E1E514C1800779B5F /* XFExpressNoDataTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8CEF9C1E514C1800779B5F /* XFExpressNoDataTVCell.xib */; };
 		FEA20E941E4D6FF200FAD315 /* XFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */; };
 		FEA20EC61E4EEC3000FAD315 /* XFExpressList.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA20EC51E4EEC3000FAD315 /* XFExpressList.m */; };
 		FEAD148B1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14891E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.m */; };
@@ -109,6 +111,9 @@
 		FE72EFAC1E44757200584C1C /* XFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFLoginViewController.h; sourceTree = "<group>"; };
 		FE72EFAD1E44757200584C1C /* XFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFLoginViewController.m; sourceTree = "<group>"; };
 		FE72EFB31E44759A00584C1C /* XFColorDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFColorDefine.h; sourceTree = "<group>"; };
+		FE8CEF9A1E514C1800779B5F /* XFExpressNoDataTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressNoDataTVCell.h; sourceTree = "<group>"; };
+		FE8CEF9B1E514C1800779B5F /* XFExpressNoDataTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFExpressNoDataTVCell.m; sourceTree = "<group>"; };
+		FE8CEF9C1E514C1800779B5F /* XFExpressNoDataTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFExpressNoDataTVCell.xib; sourceTree = "<group>"; };
 		FEA20E921E4D6FF200FAD315 /* XFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFTableViewCell.h; sourceTree = "<group>"; };
 		FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFTableViewCell.m; sourceTree = "<group>"; };
 		FEA20EC41E4EEC3000FAD315 /* XFExpressList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressList.h; sourceTree = "<group>"; };
@@ -401,6 +406,9 @@
 				FEAD148A1E49B4FD000962D3 /* XFExpressDetailsFirstLineTVCell.xib */,
 				FEAD148D1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.h */,
 				FEAD148E1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.m */,
+				FE8CEF9A1E514C1800779B5F /* XFExpressNoDataTVCell.h */,
+				FE8CEF9B1E514C1800779B5F /* XFExpressNoDataTVCell.m */,
+				FE8CEF9C1E514C1800779B5F /* XFExpressNoDataTVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -932,6 +940,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEFF69E81E45BB5F00639DBE /* XFOrderDetailsViewController.xib in Resources */,
+				FE8CEF9E1E514C1800779B5F /* XFExpressNoDataTVCell.xib in Resources */,
 				FEFF69E31E45BB4D00639DBE /* XFExpressDetailsViewController.xib in Resources */,
 				FEAD14C91E4C1122000962D3 /* XFOrderDetailsNoInvoiceCell.xib in Resources */,
 				FE474E041E2DEADC0005CD98 /* LaunchScreen.storyboard in Resources */,
@@ -1060,6 +1069,7 @@
 				FEFF69E71E45BB5F00639DBE /* XFOrderDetailsViewController.m in Sources */,
 				FEAD14DD1E4C338B000962D3 /* NSString+Conversion.m in Sources */,
 				FEAD149D1E49D01A000962D3 /* XFOrder.m in Sources */,
+				FE8CEF9D1E514C1800779B5F /* XFExpressNoDataTVCell.m in Sources */,
 				FEAD14AD1E4ABE76000962D3 /* XFGoods.m in Sources */,
 				FEAD14C31E4C0041000962D3 /* XFOrderDetailsAddressCell.m in Sources */,
 				FEA20EC61E4EEC3000FAD315 /* XFExpressList.m in Sources */,
