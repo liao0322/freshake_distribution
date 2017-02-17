@@ -14,21 +14,6 @@
 
 @interface XFRequestOrderCenter : XFBaseRequest
 
-
-/**
- 帐号和密码登录请求
-
- @param account 帐号
- @param password 密码
- @param success 成功的回调
- @param failure 失败的回调
- */
-+ (void)loginWithAccount:(NSString *)account
-                password:(NSString *)password
-                 success:(void (^)())success
-                 failure:(Failed)failure;
-
-
 /**
  获取订单列表请求
 

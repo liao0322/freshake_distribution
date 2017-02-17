@@ -103,7 +103,9 @@ static CGFloat const EstimatedCellHeight = 100.0f;
 
     if (indexPath.section == 0) {
         XFExpressDetailsFirstLineTVCell *cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFExpressDetailsFirstLineTVCell class]) owner:nil options:nil] lastObject];
-        cell.expressStatusLabel.text = self.orderStatusDict[self.express.progress];
+        if (self.express.progress.length > 0) {
+            cell.expressStatusLabel.text = self.orderStatusDict[self.express.progress];
+        }
         return cell;
     } else {
         
@@ -150,6 +152,8 @@ static CGFloat const EstimatedCellHeight = 100.0f;
 
 - (NSDictionary *)orderStatusDict {
     return @{
+             @"001": @"处理中",
+             @"002": @"已支付",
              @"003": @"已分仓",
              @"004": @"已确认",
              @"005": @"已分拣",
@@ -157,8 +161,7 @@ static CGFloat const EstimatedCellHeight = 100.0f;
              @"007": @"已出库",
              @"008": @"已发货",
              @"009": @"已完成",
-             @"010": @"已撤单",
-             
+             @"010": @"已取消"
              };
 }
 

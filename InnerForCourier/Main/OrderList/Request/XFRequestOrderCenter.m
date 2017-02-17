@@ -8,55 +8,11 @@
 
 #import "XFRequestOrderCenter.h"
 #import "XFOrder.h"
-#import "XFUser.h"
 #import "XFExpressList.h"
 #import "XFOrderDetailsModel.h"
 #import "XFExpress.h"
 
 @implementation XFRequestOrderCenter
-
-+ (void)loginWithAccount:(NSString *)account
-                password:(NSString *)password
-                 success:(void (^)())success
-                 failure:(Failed)failure {
-    
-    NSDictionary *parametersDict = @{
-                                     @"usercode": account,
-                                     @"userpwd": password,
-                                     @"syscode": @"002"
-                                     };
-    
-    [XFNetworking POST:URLUserLogin() parameters:parametersDict success:^(id responseObject, NSInteger statusCode) {
-        NSDictionary *dict = [self dictWithData:responseObject];
-        if (!dict) {
-            [XFProgressHUD showMessage:@"数据解析失败"];
-            return;
-        }
-        NSString *code = dict[KEY_CODE];
-        if (![code isEqualToString:@"0"]) {
-            [self handleCode:code];
-            return;
-        }
-        
-        // 登录成功
-        [XFKVCPersistence setValue:dict[KEY_RESULT][KEY_USER_CODE] forKey:KEY_ACCOUNT];
-        [XFKVCPersistence setValue:password forKey:KEY_PASSWORD];
-        NSDictionary *userDict = dict[KEY_RESULT][KEY_USER];
-        [XFKVCPersistence setValue:userDict[KEY_USER_ID] forKey:KEY_USER_ID];
-        [XFKVCPersistence setValue:userDict[KEY_USER_NAME] forKey:KEY_USER_NAME];
-        [XFKVCPersistence setValue:userDict[KEY_USER_STATUS] forKey:KEY_USER_STATUS];
-        [XFKVCPersistence setValue:userDict[KEY_USER_OWNERID] forKey:KEY_USER_OWNERID];
-        [XFKVCPersistence setValue:userDict[KEY_USER_TYPE] forKey:KEY_USER_TYPE];
-        
-        if (success) {
-            success();
-        }
-    } failure:^(NSError *error, NSInteger statusCode) {
-        if (failure) {
-            failure(error, statusCode);
-        }
-    }];
-}
 
 + (void)orderListWithPageNum:(NSInteger)pageNum
                     pageSize:(NSInteger)pageSize
@@ -89,7 +45,9 @@
             return;
         }
         
-        if (!dictData[KEY_RESULT][KEY_ROWS]) {
+        NSArray *rowsArray = dictData[KEY_RESULT][KEY_ROWS];
+        
+        if (rowsArray.count == 0) {
             if (success) {
                 success(nil, statusCode);
             }
@@ -161,11 +119,17 @@
                                      @"page": @"GetOrderInfo",
                                      @"id": orderId
                                      };
+    
+    // http://h5.freshake.cn/
+    // http://122.144.136.72:9970/
+    
     [XFNetworking GET:@"http://h5.freshake.cn/api/Phone/Fifth/index.aspx" parameters:parametersDict success:^(id responseObject, NSInteger statusCode) {
         NSDictionary *dict = [self dictWithData:responseObject];
 
         if (!dict) {
-            [XFProgressHUD showMessage:@"数据解析失败"];
+            if (success) {
+                success(nil);
+            }
             return;
         }
         XFOrderDetailsModel *model = [XFOrderDetailsModel mj_objectWithKeyValues:dict];

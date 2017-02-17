@@ -22,9 +22,7 @@
 
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithReuseIdentifier:reuseIdentifier];
-    if (!self) {
-        return nil;
-    }
+    if (!self) return nil;
     
     UIView *view = [UIView new];
     view.backgroundColor = [UIColor whiteColor];
@@ -47,7 +45,6 @@
 }
 
 - (void)updateConstraints {
-    
     [self.separatorLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(self);
         make.height.equalTo(0.5);
@@ -68,7 +65,6 @@
         make.centerY.equalTo(self.iconImageView);
         make.right.equalTo(self).offset(-15);
     }];
-    
     [super updateConstraints];
 }
 

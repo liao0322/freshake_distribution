@@ -11,4 +11,4 @@
 
 extern NSString *URLBaseDomain();
 
-extern NSString *URLBasePath();
+// extern NSString *URLBasePath();

@@ -9,6 +9,10 @@
 #ifndef XFRequestKeys_h
 #define XFRequestKeys_h
 
+#define KEY_CODE @"code"
 
+#define KEY_MESSAGE @"message"
+
+#define KEY_RESULT @"result"
 
 #endif /* XFRequestKeys_h */

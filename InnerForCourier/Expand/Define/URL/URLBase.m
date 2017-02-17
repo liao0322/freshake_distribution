@@ -14,24 +14,26 @@
  1：测试环境
  2：生产环境
  */
-#define DOMAIN_TYPE 0
+#define DOMAIN_TYPE 1
 
 
 NSString *URLBaseDomain() {
     
 #if DOMAIN_TYPE == 0
-    return @"http://122.144.136.72:8090/";
+    return @"http://122.144.136.72:8090/ordercenter/ocapi/";
 #elif DOMAIN_TYPE == 1
-    return @"";
+    return @"http://oc.freshake.cn:8080/ocapi/";
 #elif DOMAIN_TYPE == 2
     return @"";
 #endif
     
 }
 
+/*
 NSString *URLBasePath() {
     return [NSString stringWithFormat:@"%@%@", URLBaseDomain(), @"api/Phone/four/index.aspx"];
 }
+ */
 
 
 

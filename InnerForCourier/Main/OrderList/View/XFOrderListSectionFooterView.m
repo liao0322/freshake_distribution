@@ -136,11 +136,10 @@
 - (void)setModel:(XFOrder *)model {
     _model = model;
     
-    self.totalCountLabel.text = [NSString stringWithFormat:@"%zd 件商品",_model.goods.count];
+    self.totalCountLabel.text = [NSString stringWithFormat:@"%@ 件商品",_model.goodsNum];
     
     NSString *priceString = [NSString stringWithFormat:@"￥%.2f",[_model.orderAmt floatValue]];
     self.totalPriceLabel.text = priceString;
-
 }
 
 #pragma mark - Custom

@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "XFKVCPersistence.h"
 
-
 @interface AppDelegate ()
 
 @end

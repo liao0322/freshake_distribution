@@ -32,11 +32,8 @@
     _model = model;
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:_model.goodImg] placeholderImage:[UIImage imageWithColor:[UIColor colorViewBG]]];
     self.titleLabel.text = _model.goodsName;
-    
     self.unitLabel.text = _model.goodsUnit;
-    
     self.countLabel.text = [NSString stringWithFormat:@" x %@", _model.goodsQty];
-    
     NSString *priceString = [NSString stringWithFormat:@"￥%.2f",[_model.salePrice floatValue]];
     self.priceLabel.text = priceString;
 
@@ -49,11 +46,8 @@
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:_orderDetailsGoodsModel.thumbnailsUrll] placeholderImage:[UIImage imageWithColor:[UIColor colorViewBG]]];
     
     self.titleLabel.text = _orderDetailsGoodsModel.goods_title;
-    
     self.unitLabel.text = _orderDetailsGoodsModel.unit;
-    
     self.countLabel.text = [NSString stringWithFormat:@" x %@", _orderDetailsGoodsModel.quantity];
-    
     NSString *priceString = [NSString stringWithFormat:@"￥%.2f",[_orderDetailsGoodsModel.goods_price floatValue]];
     self.priceLabel.text = priceString;
     
@@ -61,8 +55,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    
 }
 
 @end

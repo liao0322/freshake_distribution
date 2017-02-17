@@ -10,40 +10,10 @@
 #define XFRequestOrderCenterKeys_h
 
 /// 业务code
-#define KEY_CODE @"code"
-
-#define KEY_MESSAGE @"message"
-
-#define KEY_RESULT @"result"
 
 #define KEY_EXPRESS_LIST @"expresslist"
 
 #define KEY_EXPRESS @"express"
-
-/**
- * 员工及用户编码
- */
-#define KEY_USER_CODE @"usercode"
-
-#define KEY_USER_PWD @"userpwd"
-
-#define KEY_SYSCODE @"sysCode"
-
-
-/**
- * 用户登录ip
- */
-#define KEY_USER_IP @"userIp"
-
-#define KEY_USER @"user"
-
-
-
-#define KEY_ROLES @"roles"
-
-#define KEY_MENUS @"menus"
-
-#define KEY_BUTTONS @"buttons"
 
 #define KEY_PAGE_NUM @"pageNum"
 

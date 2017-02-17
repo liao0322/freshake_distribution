@@ -9,24 +9,14 @@
 #import "URLOrderCenter.h"
 #import "URLBase.h"
 
-
-NSString *URLPath() {
-    return [NSString stringWithFormat:@"%@ordercenter/ocapi/", URLBaseDomain()];
-}
-
-
-NSString *URLUserLogin() {
-    return [NSString stringWithFormat:@"%@authUser", URLPath()];
-}
-
 NSString *URLOrderList() {
-    return [NSString stringWithFormat:@"%@queryOrderList", URLPath()];
+    return [NSString stringWithFormat:@"%@queryOrderList", URLBaseDomain()];
 }
 
 NSString *URLExpress() {
-    return [NSString stringWithFormat:@"%@queryOrderExpress", URLPath()];
+    return [NSString stringWithFormat:@"%@queryOrderExpress", URLBaseDomain()];
 }
 
 NSString *URLOrderOperation() {
-    return [NSString stringWithFormat:@"%@operOrderBiz", URLPath()];
+    return [NSString stringWithFormat:@"%@operOrderBiz", URLBaseDomain()];
 }

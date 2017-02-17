@@ -6,17 +6,6 @@
 //  Copyright © 2017年 DamonLiao. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-
-/**
- 用户登录
- 
- @return 用户登录URL
- */
-extern NSString *URLUserLogin();
-
-
 
 /**
  获取订单列表

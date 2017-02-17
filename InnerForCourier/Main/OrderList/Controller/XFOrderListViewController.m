@@ -18,6 +18,7 @@
 #import "XFOrder.h"
 #import "XFGoods.h"
 #import <MJRefresh.h>
+#import "XFNoDataView.h"
 
 #define UNDELIVERY @"007"
 #define ONDELIVERY @"008"
@@ -35,6 +36,7 @@
 @property (nonatomic) MJRefreshAutoNormalFooter *refreshFooter;
 @property (assign, nonatomic) NSInteger page;
 @property (assign, nonatomic) BOOL noMore;
+@property (nonatomic) XFNoDataView *noDataView;
 
 @end
 
@@ -133,6 +135,8 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
         if (dataArray == nil || dataArray.count == 0) {
             self.noMore = YES;
             [self.refreshFooter endRefreshingWithNoMoreData];
+            [self.dataArray removeAllObjects];
+            [self.tableView reloadData];
             return;
         }
         
@@ -183,6 +187,7 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     self.refreshFooter.hidden = self.dataArray.count == 0;
+    self.tableView.backgroundView = self.dataArray.count == 0 ? self.noDataView : nil;
     return self.dataArray.count;
 }
 
@@ -286,8 +291,17 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
     if (!_refreshFooter) {
         _refreshFooter = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
         _refreshFooter.refreshingTitleHidden = YES;
+        [_refreshFooter setTitle:@"点击或上拉加载更多订单" forState:MJRefreshStateIdle];
+        [_refreshFooter setTitle:@"没有更多订单" forState:MJRefreshStateNoMoreData];
     }
     return _refreshFooter;
+}
+
+- (XFNoDataView *)noDataView {
+    if (!_noDataView) {
+        _noDataView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFNoDataView class]) owner:nil options:nil] lastObject];
+    }
+    return _noDataView;
 }
 
 @end

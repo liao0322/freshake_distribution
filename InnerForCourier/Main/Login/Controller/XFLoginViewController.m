@@ -10,10 +10,11 @@
 #import "UIImage+Create.h"
 #import "UIColor+Project.h"
 #import "AppDelegate.h"
-#import "XFRequestOrderCenter.h"
+#import "XFRequestLogin.h"
 
 
 @interface XFLoginViewController ()
+
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UITextField *accountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -21,16 +22,6 @@
 @end
 
 @implementation XFLoginViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-
-}
 
 - (IBAction)login:(id)sender {
     [self.view endEditing:YES];
@@ -41,14 +32,13 @@
 }
 
 - (void)loginWithAccount:(NSString *)accountString password:(NSString *)passwordString {
-    [XFRequestOrderCenter loginWithAccount:accountString password:passwordString success:^{
+    [XFRequestLogin loginWithAccount:accountString password:passwordString success:^{
         [XFProgressHUD dismiss];
         [[AppDelegate appDelegate] toMain];
     } failure:^(NSError *error, NSInteger statusCode) {
         [self showError:error];
     }];
 }
-
 
 #pragma mark - Override
 
@@ -70,9 +60,5 @@
 - (IBAction)textFieldChanged:(UITextField *)sender {
     self.loginButton.enabled = self.accountTextField.text.length && self.passwordTextField.text.length;
 }
-
-
-
-
 
 @end

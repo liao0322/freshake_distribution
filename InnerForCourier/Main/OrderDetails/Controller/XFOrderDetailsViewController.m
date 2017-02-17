@@ -39,7 +39,6 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
     [super registerViews];
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XFOrderListTVCell class]) bundle:nil] forCellReuseIdentifier:OrderListTVCellID];
-
 }
 
 #pragma mark - UITableViewDelegate
@@ -59,7 +58,6 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
     } else if (indexPath.section == 2) {
         cellHeight = 125.0f;
     } else if (indexPath.section == 3) {
-        
         if (![self.orderDetails.InvoiceTitle isEmpty]) { // 如果有发票信息
             cellHeight = 132.0f;
         }
@@ -199,7 +197,6 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
     [XFProgressHUD showLoading];
     [XFRequestOrderCenter orderDetailsWithOrderId:self.originalId success:^(XFOrderDetailsModel *orderDetailsModel) {
         [XFProgressHUD dismiss];
-        orderDetailsModel.express_id = @"1";
         if (!orderDetailsModel) return;
         self.orderDetails = orderDetailsModel;
         [self.tableView reloadData];

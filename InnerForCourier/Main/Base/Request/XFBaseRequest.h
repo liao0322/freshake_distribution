@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "XFNetworking.h"
+#import "XFRequestKeys.h"
 
 /** 请求成功的Block */
 typedef void(^Success)(id responseObject, NSInteger statusCode);
