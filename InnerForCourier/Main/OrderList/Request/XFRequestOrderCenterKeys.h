@@ -31,5 +31,8 @@
 
 #define KEY_PAGE_COUNT @"pageCount"
 
+#define KEY_SHOP_ID @"shopid"
+
+#define KEY_ORDER_STATUS @"orderStatus"
 
 #endif /* XFRequestOrderCenterKeys_h */

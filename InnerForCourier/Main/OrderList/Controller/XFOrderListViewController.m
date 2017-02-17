@@ -54,13 +54,8 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
     [self refreshData];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
     self.dataArray = nil;
     [self.tableView reloadData];
 }
@@ -175,12 +170,9 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
 }
 
 - (IBAction)logout:(id)sender {
-//    [XFKVCPersistence remove:KEY_ACCOUNT];
-//    [XFKVCPersistence remove:KEY_PASSWORD];
     [XFKVCPersistence clear];
     [[AppDelegate appDelegate] toLogin];
 }
-
 
 
 #pragma mark - UITableViewDataSource

@@ -442,9 +442,9 @@
 		FE76AA2E1E56B84C00100A9F /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				FE76AA311E56B85D00100A9F /* XFRequestKeys.h */,
 				FE76AA2F1E56B85D00100A9F /* XFBaseRequest.h */,
 				FE76AA301E56B85D00100A9F /* XFBaseRequest.m */,
-				FE76AA311E56B85D00100A9F /* XFRequestKeys.h */,
 			);
 			path = Request;
 			sourceTree = "<group>";

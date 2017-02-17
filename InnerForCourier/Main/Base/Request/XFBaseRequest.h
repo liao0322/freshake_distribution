@@ -12,11 +12,10 @@
 
 /** 请求成功的Block */
 typedef void(^Success)(id responseObject, NSInteger statusCode);
+typedef void(^SuccessWithArray)(NSArray *dataArray, NSInteger statusCode);
 
 /** 请求失败的Block */
 typedef void(^Failed)(NSError *error, NSInteger statusCode);
-
-typedef void(^SuccessWithArray)(NSArray *dataArray, NSInteger statusCode);
 
 
 @interface XFBaseRequest : NSObject

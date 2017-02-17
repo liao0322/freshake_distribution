@@ -21,10 +21,10 @@
                      success:(SuccessWithArray)success
                      failure:(Failed)failure {
     NSDictionary *parametersDict = @{
-                                     @"pageNum": @(pageNum),
-                                     @"pageSize": @(pageSize),
-                                     @"shopid": shopid,
-                                     @"orderStatus": orderStatus
+                                     KEY_PAGE_NUM: @(pageNum),
+                                     KEY_PAGE_SIZE: @(pageSize),
+                                     KEY_SHOP_ID: shopid,
+                                     KEY_ORDER_STATUS: orderStatus
                                      };
     
     [XFNetworking GET:URLOrderList() parameters:parametersDict success:^(id responseObject, NSInteger statusCode) {
@@ -56,7 +56,6 @@
         if (success) {
             success(dataArray, statusCode);
         }
-        NSLog(@"%@", dataArray);
     } failure:^(NSError *error, NSInteger statusCode) {
         if (failure) {
             failure(error, statusCode);
