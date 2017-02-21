@@ -30,6 +30,7 @@
 @implementation XFOrderDetailsViewController
 
 static NSString * const OrderListTVCellID = @"OrderListTVCellID";
+static CGFloat const EstimatedCellHeight = 200.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,7 +52,8 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
     CGFloat cellHeight = 44;
     if (indexPath.section == 1) { // 地址
         if ([self.orderDetails.express_id integerValue] == 1) { // 送货
-            cellHeight = 180.0f;
+//            cellHeight = 180.0f;
+             return UITableViewAutomaticDimension;
         } else { // 自提
             cellHeight = 230.0f;
         }
@@ -209,6 +211,9 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
 - (void)initialize {
     [super initialize];
     self.title = @"订单详情";
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = EstimatedCellHeight;
 }
 
 

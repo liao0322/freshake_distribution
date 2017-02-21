@@ -26,7 +26,6 @@ NSString *URLBaseDomain() {
 #elif DOMAIN_TYPE == 2
     return @"";
 #endif
-    
 }
 
 /*

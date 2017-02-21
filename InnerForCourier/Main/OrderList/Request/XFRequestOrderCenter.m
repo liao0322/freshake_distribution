@@ -119,8 +119,10 @@
                                      @"id": orderId
                                      };
     
-    // http://h5.freshake.cn/
-    // http://122.144.136.72:9970/
+    // http://h5.freshake.cn
+    // http://122.144.136.72:9970
+    
+    
     
     [XFNetworking GET:@"http://h5.freshake.cn/api/Phone/Fifth/index.aspx" parameters:parametersDict success:^(id responseObject, NSInteger statusCode) {
         NSDictionary *dict = [self dictWithData:responseObject];
