@@ -20,14 +20,10 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *dataArray;
-
 @property (copy, nonatomic) NSString *orderStatus;
 @property (copy, nonatomic) NSString *originalNo;
-
 @property (nonatomic) XFExpress *express;
-
 @property (copy, nonatomic, readonly) NSDictionary *orderStatusDict;
-
 @end
 
 @implementation XFExpressDetailsViewController
@@ -41,7 +37,6 @@ static CGFloat const EstimatedCellHeight = 100.0f;
     _originalNo = originalNo;
     return self;
 }
-
 
 #pragma mark - LifeCycle
 

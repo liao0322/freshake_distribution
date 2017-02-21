@@ -1265,6 +1265,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/InnerForCourier/PrefixHeader.pch";
 				INFOPLIST_FILE = InnerForCourier/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xianyaopai.forcourier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1280,6 +1281,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/InnerForCourier/PrefixHeader.pch";
 				INFOPLIST_FILE = InnerForCourier/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xianyaopai.forcourier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1386,6 +1388,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/InnerForCourier/PrefixHeader.pch";
 				INFOPLIST_FILE = InnerForCourier/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xianyaopai.forcourier;
 				PRODUCT_NAME = "$(TARGET_NAME)";

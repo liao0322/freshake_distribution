@@ -103,7 +103,7 @@ static NSString * const OrderListTVCellID = @"OrderListTVCellID";
         if ([self.orderDetails.express_id integerValue] == 1) { // 送货
             XFOrderDetailsDeliverAddressTVCell *cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFOrderDetailsDeliverAddressTVCell class]) owner:nil options:nil] lastObject];
             
-            cell.shopAddressLabel.text = [NSString stringWithString:self.orderDetails.addr defaultValue:defaultString];
+            cell.shopAddressLabel.text = [NSString stringWithString:self.orderDetails.address defaultValue:defaultString];
             cell.customerNameLabel.text = [NSString stringWithString:self.orderDetails.username defaultValue:defaultString];
             cell.customerPhoneNumberLabel.text = [NSString stringWithString:self.orderDetails.telphone defaultValue:defaultString];
             cell.appointmentTimeLabel.text = [NSString stringWithString:self.orderDetails.DeliveryTime defaultValue:defaultString];
