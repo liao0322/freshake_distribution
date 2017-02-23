@@ -11,10 +11,6 @@
 
 /// 业务code
 
-#define KEY_EXPRESS_LIST @"expresslist"
-
-#define KEY_EXPRESS @"express"
-
 #define KEY_PAGE_NUM @"pageNum"
 
 #define KEY_PAGE_SIZE @"pageSize"

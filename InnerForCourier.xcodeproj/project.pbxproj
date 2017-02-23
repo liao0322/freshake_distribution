@@ -19,6 +19,7 @@
 		FE76AA281E56B75E00100A9F /* URLLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76AA271E56B75E00100A9F /* URLLogin.m */; };
 		FE76AA2D1E56B82D00100A9F /* XFRequestOrderCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76AA2B1E56B82D00100A9F /* XFRequestOrderCenter.m */; };
 		FE76AA321E56B85D00100A9F /* XFBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76AA301E56B85D00100A9F /* XFBaseRequest.m */; };
+		FE76AA8D1E5E9DDB00100A9F /* XFExpressDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76AA8C1E5E9DDA00100A9F /* XFExpressDetailsRequest.m */; };
 		FE8CEF9D1E514C1800779B5F /* XFExpressNoDataTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8CEF9B1E514C1800779B5F /* XFExpressNoDataTVCell.m */; };
 		FE8CEF9E1E514C1800779B5F /* XFExpressNoDataTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8CEF9C1E514C1800779B5F /* XFExpressNoDataTVCell.xib */; };
 		FE8CEFA31E5546B000779B5F /* XFNoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8CEFA21E5546B000779B5F /* XFNoDataView.xib */; };
@@ -126,6 +127,9 @@
 		FE76AA2F1E56B85D00100A9F /* XFBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFBaseRequest.h; sourceTree = "<group>"; };
 		FE76AA301E56B85D00100A9F /* XFBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFBaseRequest.m; sourceTree = "<group>"; };
 		FE76AA311E56B85D00100A9F /* XFRequestKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFRequestKeys.h; sourceTree = "<group>"; };
+		FE76AA8B1E5E9DDA00100A9F /* XFExpressDetailsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressDetailsRequest.h; sourceTree = "<group>"; };
+		FE76AA8C1E5E9DDA00100A9F /* XFExpressDetailsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFExpressDetailsRequest.m; sourceTree = "<group>"; };
+		FE76AA8E1E5E9DEF00100A9F /* XFExpressDetailsRequestKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressDetailsRequestKeys.h; sourceTree = "<group>"; };
 		FE8CEF9A1E514C1800779B5F /* XFExpressNoDataTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressNoDataTVCell.h; sourceTree = "<group>"; };
 		FE8CEF9B1E514C1800779B5F /* XFExpressNoDataTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFExpressNoDataTVCell.m; sourceTree = "<group>"; };
 		FE8CEF9C1E514C1800779B5F /* XFExpressNoDataTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFExpressNoDataTVCell.xib; sourceTree = "<group>"; };
@@ -445,6 +449,16 @@
 				FE76AA311E56B85D00100A9F /* XFRequestKeys.h */,
 				FE76AA2F1E56B85D00100A9F /* XFBaseRequest.h */,
 				FE76AA301E56B85D00100A9F /* XFBaseRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		FE76AA8A1E5E9DB700100A9F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FE76AA8E1E5E9DEF00100A9F /* XFExpressDetailsRequestKeys.h */,
+				FE76AA8B1E5E9DDA00100A9F /* XFExpressDetailsRequest.h */,
+				FE76AA8C1E5E9DDA00100A9F /* XFExpressDetailsRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -781,6 +795,7 @@
 				FEFF69D61E45B87D00639DBE /* Controller */,
 				FEAD147F1E49B3FC000962D3 /* View */,
 				FEAD14AE1E4AFD24000962D3 /* Model */,
+				FE76AA8A1E5E9DB700100A9F /* Request */,
 			);
 			path = ExpressDetails;
 			sourceTree = "<group>";
@@ -1082,6 +1097,7 @@
 				FEFF69E21E45BB4D00639DBE /* XFExpressDetailsViewController.m in Sources */,
 				FEAD14A01E49D69B000962D3 /* XFView.m in Sources */,
 				FEFF69ED1E45C05500639DBE /* XFOrderListTVCell.m in Sources */,
+				FE76AA8D1E5E9DDB00100A9F /* XFExpressDetailsRequest.m in Sources */,
 				FEA20E941E4D6FF200FAD315 /* XFTableViewCell.m in Sources */,
 				FEFF6A0F1E49680300639DBE /* NSObject+Ext.m in Sources */,
 				FEFF69B41E45743600639DBE /* UIColor+Extension.m in Sources */,

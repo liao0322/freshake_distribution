@@ -9,7 +9,7 @@
 #import "XFExpressDetailsViewController.h"
 #import "XFExpressDetailsFirstLineTVCell.h"
 #import "XFExpressDetailsTimeLineTVCell.h"
-#import "XFRequestOrderCenter.h"
+#import "XFExpressDetailsRequest.h"
 #import "XFExpress.h"
 #import "XFExpressList.h"
 #import "XFExpressNoDataTVCell.h"
@@ -52,7 +52,7 @@ static CGFloat const EstimatedCellHeight = 100.0f;
 
     [XFProgressHUD showLoading];
     
-    [XFRequestOrderCenter orderExpressWithOriginalNo:self.originalNo sourceCode:@"1" syscode:@"002" success:^(NSArray *dataArray, NSInteger statusCode, XFExpress *express) {
+    [XFExpressDetailsRequest orderExpressWithOriginalNo:self.originalNo sourceCode:@"1" syscode:@"002" success:^(NSArray *dataArray, NSInteger statusCode, XFExpress *express) {
         [XFProgressHUD dismiss];
         if (!dataArray) {
             return;

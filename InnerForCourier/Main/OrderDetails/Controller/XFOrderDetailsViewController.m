@@ -171,24 +171,17 @@ static CGFloat const EstimatedCellHeight = 200.0f;
 }
 
 - (NSString *)paymentString {
-    NSString *paymentString = @"";
-    int paymentId = [self.orderDetails.payment_id intValue];
-    if (paymentId == 2) {
-        paymentString = @"余额支付";
-    }
-    else if (paymentId == 3) {
-        paymentString = @"支付宝支付";
-    }
-    else if (paymentId == 4) {
-        paymentString = @"微信支付";
-    }
-    else if (paymentId == 6) {
-        paymentString = @"HD支付宝支付";
-    }
-    else if (paymentId == 5) {
-        paymentString = @"HD微信支付";
-    }
-    return paymentString;
+    return [[self paymentTypeDict] objectForKey:self.orderDetails.payment_id];
+}
+
+- (NSDictionary *)paymentTypeDict {
+    return @{
+             @"2": @"余额支付",
+             @"3": @"支付宝支付",
+             @"4": @"微信支付",
+             @"5": @"HD微信支付",
+             @"6": @"HD支付宝支付"
+             };
 }
 
 
