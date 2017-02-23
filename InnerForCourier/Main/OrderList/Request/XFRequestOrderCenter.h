@@ -26,6 +26,7 @@
                     pageSize:(NSInteger)pageSize
                       shopid:(NSString *)shopid
                  orderStatus:(NSString *)orderStatus
+                   orderSort:(NSString *)orderSort
                      success:(SuccessWithArray)success
                      failure:(Failed)failure;
 

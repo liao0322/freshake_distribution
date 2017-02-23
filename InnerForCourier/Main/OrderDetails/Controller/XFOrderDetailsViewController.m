@@ -32,8 +32,33 @@
 static NSString * const OrderListTVCellID = @"OrderListTVCellID";
 static CGFloat const EstimatedCellHeight = 200.0f;
 
+#pragma mark - LifeCycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+#pragma mark - Override
+
+- (void)initialize {
+    [super initialize];
+    self.title = @"订单详情";
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = EstimatedCellHeight;
+}
+
+- (void)requestData {
+    [super requestData];
+    [XFProgressHUD showLoading];
+    [XFRequestOrderCenter orderDetailsWithOrderId:self.originalId success:^(XFOrderDetailsModel *orderDetailsModel) {
+        [XFProgressHUD dismiss];
+        if (!orderDetailsModel) return;
+        self.orderDetails = orderDetailsModel;
+        [self.tableView reloadData];
+    } failure:^(NSError *error, NSInteger statusCode) {
+        [self showError:error];
+    }];
 }
 
 - (void)registerViews {
@@ -49,25 +74,7 @@ static CGFloat const EstimatedCellHeight = 200.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat cellHeight = 44;
-    if (indexPath.section == 1) { // 地址
-        if ([self.orderDetails.express_id integerValue] == 1) { // 送货
-//            cellHeight = 180.0f;
-             return UITableViewAutomaticDimension;
-        } else { // 自提
-            cellHeight = 230.0f;
-        }
-    } else if (indexPath.section == 2) {
-        cellHeight = 125.0f;
-    } else if (indexPath.section == 3) {
-        if (![self.orderDetails.InvoiceTitle isEmpty]) { // 如果有发票信息
-            cellHeight = 132.0f;
-        }
-        
-    } else if (indexPath.section == 4) {
-        cellHeight = 264.0f;
-    }
-    return cellHeight;
+    return UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -119,22 +126,6 @@ static CGFloat const EstimatedCellHeight = 200.0f;
             
         }
         
-        // 自提
-        XFOrderDetailsAddressCell *cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFOrderDetailsAddressCell class]) owner:nil options:nil] lastObject];
-        
-        cell.shopAddressLabel.text = [NSString stringWithString:self.orderDetails.addr defaultValue:defaultString];
-        
-        cell.shopPointLabel.text = [NSString stringWithString:self.orderDetails.fendian defaultValue:defaultString];
-        cell.shopPhoneNumberLabel.text = [NSString stringWithString:self.orderDetails.tel defaultValue:defaultString];
-        cell.customerNameLabel.text = [NSString stringWithString:self.orderDetails.username defaultValue:defaultString];
-        cell.customerPhoneNumberLabel.text = [NSString stringWithString:self.orderDetails.telphone defaultValue:defaultString];
-        cell.appointmentTimeLabel.text = [NSString stringWithString:self.orderDetails.picktime defaultValue:defaultString];
-        cell.remarkLabel.text = [NSString stringWithString:self.orderDetails.message defaultValue:defaultString];
-        cell.viewExpressBlock = ^{
-            XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOriginalNo:self.originalNo];
-            [self.navigationController pushViewController:viewExpressVC animated:YES];
-        };
-        return cell;
     } else if (section == 2) {
         NSArray *goodsArray = self.orderDetails.list;
         
@@ -158,63 +149,48 @@ static CGFloat const EstimatedCellHeight = 200.0f;
     } else if (section == 4) {
         XFOrderDetailsBasicInfoCell *cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFOrderDetailsBasicInfoCell class]) owner:nil options:nil] lastObject];
 
-        cell.postageLabel.text = [NSString stringWithString:[NSString stringWithFormat:@"￥%.2f", [self.orderDetails.express_fee floatValue]] defaultValue:@"￥0.00"];
-        cell.totalPriceLabel.text = [NSString stringWithString:[NSString stringWithFormat:@"￥%.2f", [self.orderDetails.order_amount floatValue]] defaultValue:@"￥0.00"];
-        cell.couponLabel.text = [NSString stringWithString:[NSString stringWithFormat:@"￥%.2f", [self.orderDetails.order_AwardAmount floatValue]] defaultValue:@"￥0.00"];
+        cell.postageLabel.text = [self stringWithValue:[self.orderDetails.express_fee floatValue]];
+        
+        cell.totalPriceLabel.text = [self stringWithValue:[self.orderDetails.order_amount floatValue]];
+        
+        cell.couponLabel.text = [self stringWithValue:[self.orderDetails.order_AwardAmount floatValue]];
         
         cell.pointLabel.text = [NSString stringWithString:[NSString stringWithFormat:@"- ￥%.2f", [self.orderDetails.point floatValue] / 100] defaultValue:@"￥0.00"];
         
-        cell.priceLabel.text = [NSString stringWithString:[NSString stringWithFormat:@"￥%.2f", [self.orderDetails.payable_amount floatValue]] defaultValue:@"￥0.00"];
+        cell.priceLabel.text = [self stringWithValue:[self.orderDetails.payable_amount floatValue]];
         
-        // 判断支付方式
-        NSString *paymentString = @"";
-        int paymentId = [self.orderDetails.payment_id intValue];
-        if (paymentId == 2) {
-            paymentString = @"余额支付";
-        }
-        else if (paymentId == 3) {
-            paymentString = @"支付宝支付";
-        }
-        else if (paymentId == 4) {
-            paymentString = @"微信支付";
-        }
-        else if (paymentId == 6) {
-            paymentString = @"HD支付宝支付";
-        }
-        else if (paymentId == 5) {
-            paymentString = @"HD微信支付";
-        }
-        
-        cell.paymentTypeLabel.text = paymentString;
+        cell.paymentTypeLabel.text = [self paymentString];
         
         return cell;
     }
     return [UITableViewCell new];
 }
 
-#pragma mark - Override
-
-- (void)requestData {
-    [super requestData];
-    [XFProgressHUD showLoading];
-    [XFRequestOrderCenter orderDetailsWithOrderId:self.originalId success:^(XFOrderDetailsModel *orderDetailsModel) {
-        [XFProgressHUD dismiss];
-        if (!orderDetailsModel) return;
-        self.orderDetails = orderDetailsModel;
-        [self.tableView reloadData];
-    } failure:^(NSError *error, NSInteger statusCode) {
-        [self showError:error];
-    }];
-    
+- (NSString *)stringWithValue:(float)value {
+    return [NSString stringWithString:[NSString stringWithFormat:@"￥%.2f", value] defaultValue:@"￥0.00"];
 }
 
-- (void)initialize {
-    [super initialize];
-    self.title = @"订单详情";
-    
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = EstimatedCellHeight;
+- (NSString *)paymentString {
+    NSString *paymentString = @"";
+    int paymentId = [self.orderDetails.payment_id intValue];
+    if (paymentId == 2) {
+        paymentString = @"余额支付";
+    }
+    else if (paymentId == 3) {
+        paymentString = @"支付宝支付";
+    }
+    else if (paymentId == 4) {
+        paymentString = @"微信支付";
+    }
+    else if (paymentId == 6) {
+        paymentString = @"HD支付宝支付";
+    }
+    else if (paymentId == 5) {
+        paymentString = @"HD微信支付";
+    }
+    return paymentString;
 }
+
 
 
 

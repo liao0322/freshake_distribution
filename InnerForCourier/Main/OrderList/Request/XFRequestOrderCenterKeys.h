@@ -35,4 +35,6 @@
 
 #define KEY_ORDER_STATUS @"orderStatus"
 
+#define KEY_ORDER_SORT @"orderSort"
+
 #endif /* XFRequestOrderCenterKeys_h */

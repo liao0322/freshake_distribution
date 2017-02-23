@@ -18,13 +18,15 @@
                     pageSize:(NSInteger)pageSize
                       shopid:(NSString *)shopid
                  orderStatus:(NSString *)orderStatus
+                   orderSort:(NSString *)orderSort
                      success:(SuccessWithArray)success
                      failure:(Failed)failure {
     NSDictionary *parametersDict = @{
                                      KEY_PAGE_NUM: @(pageNum),
                                      KEY_PAGE_SIZE: @(pageSize),
                                      KEY_SHOP_ID: shopid,
-                                     KEY_ORDER_STATUS: orderStatus
+                                     KEY_ORDER_STATUS: orderStatus,
+                                     KEY_ORDER_SORT: orderSort
                                      };
     
     [XFNetworking GET:URLOrderList() parameters:parametersDict success:^(id responseObject, NSInteger statusCode) {
@@ -61,7 +63,6 @@
             failure(error, statusCode);
         }
     }];
-    
 }
 
 + (void)orderExpressWithOriginalNo:(NSString *)originalNo
@@ -121,8 +122,6 @@
     
     // http://h5.freshake.cn
     // http://122.144.136.72:9970
-    
-    
     
     [XFNetworking GET:@"http://h5.freshake.cn/api/Phone/Fifth/index.aspx" parameters:parametersDict success:^(id responseObject, NSInteger statusCode) {
         NSDictionary *dict = [self dictWithData:responseObject];

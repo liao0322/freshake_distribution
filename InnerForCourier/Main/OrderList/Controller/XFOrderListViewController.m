@@ -37,6 +37,8 @@
 @property (assign, nonatomic) NSInteger page;
 @property (assign, nonatomic) BOOL noMore;
 @property (nonatomic) XFNoDataView *noDataView;
+@property (copy, nonatomic) NSString *orderSort;
+
 
 @end
 
@@ -119,7 +121,8 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
 }
 
 - (void)requestDataOnPage:(NSInteger)page refresh:(BOOL)refresh {
-    [XFRequestOrderCenter orderListWithPageNum:page pageSize:PAGE_LIMIT shopid:[XFKVCPersistence get:KEY_USER_OWNERID] orderStatus:self.orderStatus success:^(NSArray *dataArray, NSInteger statusCode) {
+    
+    [XFRequestOrderCenter orderListWithPageNum:page pageSize:PAGE_LIMIT shopid:[XFKVCPersistence get:KEY_USER_OWNERID] orderStatus:self.orderStatus orderSort:self.orderSort success:^(NSArray *dataArray, NSInteger statusCode) {
         [XFProgressHUD dismiss];
         [self requestDidCompleted];
         
@@ -294,6 +297,10 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
         _noDataView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFNoDataView class]) owner:nil options:nil] lastObject];
     }
     return _noDataView;
+}
+
+- (NSString *)orderSort {
+    return [self.orderStatus isEqualToString:DELIVERY_COMPLETE] ? @"desc" : @"asc";
 }
 
 @end
