@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    if ([XFKVCPersistence contain:KEY_ACCOUNT]) {
+    if ([XFKVCPersistence contain:KEY_ACCOUNT]) { // 已登录
         [self toMain];
     } else {
         [self toLogin];
@@ -27,13 +27,16 @@
 }
 
 - (void)toLogin {
-    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    [self restoreRootViewController:[mainSB instantiateViewControllerWithIdentifier:@"LoginSB"]];
+    [self setRootViewControllerWithIdentifier:@"LoginSB"];
 }
 
 - (void)toMain {
+    [self setRootViewControllerWithIdentifier:@"NavigationSB"];
+}
+
+- (void)setRootViewControllerWithIdentifier:(NSString *)identifier {
     UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    [self restoreRootViewController:[mainSB instantiateViewControllerWithIdentifier:@"NavigationSB"]];
+    [self restoreRootViewController:[mainSB instantiateViewControllerWithIdentifier:identifier]];
 }
 
 + (AppDelegate *)appDelegate {

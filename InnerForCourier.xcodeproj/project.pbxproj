@@ -33,7 +33,6 @@
 		FEAD149A1E49CFFB000962D3 /* XFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14991E49CFFB000962D3 /* XFModel.m */; };
 		FEAD149D1E49D01A000962D3 /* XFOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD149C1E49D01A000962D3 /* XFOrder.m */; };
 		FEAD14A01E49D69B000962D3 /* XFView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD149F1E49D69B000962D3 /* XFView.m */; };
-		FEAD14A41E49E2F8000962D3 /* XFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14A31E49E2F8000962D3 /* XFUser.m */; };
 		FEAD14A81E4AA3D9000962D3 /* XFMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14A71E4AA3D9000962D3 /* XFMemoryStorage.m */; };
 		FEAD14AD1E4ABE76000962D3 /* XFGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14AC1E4ABE76000962D3 /* XFGoods.m */; };
 		FEAD14B11E4AFD41000962D3 /* XFExpress.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14B01E4AFD41000962D3 /* XFExpress.m */; };
@@ -153,8 +152,6 @@
 		FEAD149C1E49D01A000962D3 /* XFOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrder.m; sourceTree = "<group>"; };
 		FEAD149E1E49D69B000962D3 /* XFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFView.h; sourceTree = "<group>"; };
 		FEAD149F1E49D69B000962D3 /* XFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFView.m; sourceTree = "<group>"; };
-		FEAD14A21E49E2F8000962D3 /* XFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFUser.h; sourceTree = "<group>"; };
-		FEAD14A31E49E2F8000962D3 /* XFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFUser.m; sourceTree = "<group>"; };
 		FEAD14A61E4AA3D9000962D3 /* XFMemoryStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFMemoryStorage.h; sourceTree = "<group>"; };
 		FEAD14A71E4AA3D9000962D3 /* XFMemoryStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFMemoryStorage.m; sourceTree = "<group>"; };
 		FEAD14A91E4AA3EC000962D3 /* XFMemoryStorageKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFMemoryStorageKeys.h; sourceTree = "<group>"; };
@@ -389,7 +386,6 @@
 		FE72EFAA1E44757200584C1C /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FEAD14A11E49E2D4000962D3 /* Model */,
 				FE72EFAB1E44757200584C1C /* Controller */,
 				FE76AA1D1E56B2BB00100A9F /* Request */,
 			);
@@ -525,15 +521,6 @@
 				FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FEAD14A11E49E2D4000962D3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FEAD14A21E49E2F8000962D3 /* XFUser.h */,
-				FEAD14A31E49E2F8000962D3 /* XFUser.m */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FEAD14A51E4AA3C6000962D3 /* XFMemoryStorage */ = {
@@ -1087,7 +1074,6 @@
 				FE8CEFA61E55476400779B5F /* XFNoDataView.m in Sources */,
 				FE72EFAE1E44757200584C1C /* XFLoginViewController.m in Sources */,
 				FEFF69FC1E48908100639DBE /* URLBase.m in Sources */,
-				FEAD14A41E49E2F8000962D3 /* XFUser.m in Sources */,
 				FEAD148F1E49B50D000962D3 /* XFExpressDetailsTimeLineTVCell.m in Sources */,
 				FEFF69991E456A9200639DBE /* XFNavigationController.m in Sources */,
 				FEFF69B61E45743600639DBE /* UIImage+Create.m in Sources */,
