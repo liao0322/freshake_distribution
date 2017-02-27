@@ -32,8 +32,9 @@
 }
 
 - (void)loginWithAccount:(NSString *)accountString password:(NSString *)passwordString {
-    [XFRequestLogin loginWithAccount:accountString password:passwordString success:^{
+    [XFRequestLogin loginWithAccount:accountString password:passwordString success:^(NSDictionary *dict){
         [XFProgressHUD dismiss];
+        [self persistenceInfoWithDict:dict]; // 持久化用户信息
         [[AppDelegate appDelegate] toMain];
     } failure:^(NSError *error, NSInteger statusCode) {
         [self showError:error];
@@ -59,6 +60,16 @@
 
 - (IBAction)textFieldChanged:(UITextField *)sender {
     self.loginButton.enabled = self.accountTextField.text.length && self.passwordTextField.text.length;
+}
+
+- (void)persistenceInfoWithDict:(NSDictionary *)dict {
+    [XFKVCPersistence setValue:dict[KEY_RESULT][KEY_USER_CODE] forKey:KEY_ACCOUNT];
+    NSDictionary *userDict = dict[KEY_RESULT][KEY_USER];
+    [XFKVCPersistence setValue:userDict[KEY_USER_ID] forKey:KEY_USER_ID];
+    [XFKVCPersistence setValue:userDict[KEY_USER_NAME] forKey:KEY_USER_NAME];
+    [XFKVCPersistence setValue:userDict[KEY_USER_STATUS] forKey:KEY_USER_STATUS];
+    [XFKVCPersistence setValue:userDict[KEY_USER_OWNERID] forKey:KEY_USER_OWNERID];
+    [XFKVCPersistence setValue:userDict[KEY_USER_TYPE] forKey:KEY_USER_TYPE];
 }
 
 @end

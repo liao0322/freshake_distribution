@@ -14,7 +14,7 @@
 
 + (void)loginWithAccount:(NSString *)account
                 password:(NSString *)password
-                 success:(void (^)())success
+                 success:(void (^)(NSDictionary *dict))success
                  failure:(Failed)failure {
     
     NSDictionary *parametersDict = @{
@@ -27,26 +27,22 @@
         NSDictionary *dict = [self dictWithData:responseObject];
         if (!dict) {
             [XFProgressHUD showMessage:@"数据解析失败"];
+            if (success) {
+                success(nil);
+            }
             return;
         }
         NSString *code = dict[KEY_CODE];
         if (![code isEqualToString:@"0"]) {
             [self handleCode:code];
+            if (success) {
+                success(nil);
+            }
             return;
         }
-        
         // 登录成功
-        [XFKVCPersistence setValue:dict[KEY_RESULT][KEY_USER_CODE] forKey:KEY_ACCOUNT];
-        [XFKVCPersistence setValue:password forKey:KEY_PASSWORD];
-        NSDictionary *userDict = dict[KEY_RESULT][KEY_USER];
-        [XFKVCPersistence setValue:userDict[KEY_USER_ID] forKey:KEY_USER_ID];
-        [XFKVCPersistence setValue:userDict[KEY_USER_NAME] forKey:KEY_USER_NAME];
-        [XFKVCPersistence setValue:userDict[KEY_USER_STATUS] forKey:KEY_USER_STATUS];
-        [XFKVCPersistence setValue:userDict[KEY_USER_OWNERID] forKey:KEY_USER_OWNERID];
-        [XFKVCPersistence setValue:userDict[KEY_USER_TYPE] forKey:KEY_USER_TYPE];
-        
         if (success) {
-            success();
+            success(dict);
         }
     } failure:^(NSError *error, NSInteger statusCode) {
         if (failure) {
@@ -54,5 +50,7 @@
         }
     }];
 }
+
+
 
 @end

@@ -29,7 +29,6 @@
 @interface XFOrderListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @property (nonatomic) UIRefreshControl *refreshControl;
 @property (nonatomic) NSMutableArray *dataArray;
 @property (copy, nonatomic) NSString *orderStatus;
@@ -38,7 +37,6 @@
 @property (assign, nonatomic) BOOL noMore;
 @property (nonatomic) XFNoDataView *noDataView;
 @property (copy, nonatomic) NSString *orderSort;
-
 
 @end
 

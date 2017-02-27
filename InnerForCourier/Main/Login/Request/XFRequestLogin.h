@@ -19,7 +19,7 @@
  */
 + (void)loginWithAccount:(NSString *)account
                 password:(NSString *)password
-                 success:(void (^)())success
+                 success:(void (^)(NSDictionary *dict))success
                  failure:(Failed)failure;
 
 @end
