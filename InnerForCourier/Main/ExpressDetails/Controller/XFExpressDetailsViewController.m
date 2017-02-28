@@ -35,6 +35,7 @@ static CGFloat const EstimatedCellHeight = 100.0f;
     self = [super init];
     if (!self) return nil;
     _originalNo = originalNo;
+    _dataArray = [NSMutableArray array];
     return self;
 }
 
@@ -137,13 +138,6 @@ static CGFloat const EstimatedCellHeight = 100.0f;
 }
 
 #pragma mark - LazyLoad
-
-- (NSMutableArray *)dataArray {
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray array];
-    }
-    return _dataArray;
-}
 
 - (NSDictionary *)orderStatusDict {
     return @{

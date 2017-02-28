@@ -242,19 +242,16 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     XFOrder *order = self.dataArray[section];
+    
     XFOrderListSectionFooterView *footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:OrderListSectionFooterID];
     footerView.model = order;
-    
     footerView.viewOrderDetailsBlock = ^{
-        
         XFOrderDetailsViewController *orderDetailsVC = [XFOrderDetailsViewController new];
         orderDetailsVC.originalNo = order.originalNo;
         orderDetailsVC.originalId = order.originalId;
         orderDetailsVC.orderStatus = self.orderStatus;
         [self.navigationController pushViewController:orderDetailsVC animated:YES];
-
     };
-    
     footerView.viewExpressBlock = ^{
         XFExpressDetailsViewController *viewExpressVC = [[XFExpressDetailsViewController alloc] initWithOriginalNo:order.originalNo];
         [self.navigationController pushViewController:viewExpressVC animated:YES];
