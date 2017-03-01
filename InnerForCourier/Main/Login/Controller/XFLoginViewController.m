@@ -37,7 +37,9 @@
         [self persistenceInfoWithDict:dict]; // 持久化用户信息
         [[AppDelegate appDelegate] toMain];
     } failure:^(NSError *error, NSInteger statusCode) {
-        [self showError:error];
+        if (error) {
+            [self showError:error];
+        } 
     }];
 }
 

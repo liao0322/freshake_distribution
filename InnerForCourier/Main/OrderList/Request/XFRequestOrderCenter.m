@@ -72,10 +72,19 @@
                                      @"id": orderId
                                      };
     
-    // http://h5.freshake.cn
-    // http://122.144.136.72:9970
+    NSString *domainUrlString = @"";
     
-    [XFNetworking GET:@"http://h5.freshake.cn/api/Phone/Fifth/index.aspx" parameters:parametersDict success:^(id responseObject, NSInteger statusCode) {
+#ifdef BUILD_FOR_DEVELOP
+    domainUrlString = @"http://test.freshake.cn:9970";
+#elif defined BUILD_FOR_TEST
+    domainUrlString = @"http://test.freshake.cn:9970";
+#elif defined BUILD_FOR_RELEASE
+    domainUrlString = @"http://h5.freshake.cn";
+#endif
+    
+    NSString *URLString = [NSString stringWithFormat:@"%@%@", domainUrlString, @"/api/Phone/Fifth/index.aspx"];
+    
+    [XFNetworking GET:URLString parameters:parametersDict success:^(id responseObject, NSInteger statusCode) {
         NSDictionary *dict = [self dictWithData:responseObject];
 
         if (!dict) {

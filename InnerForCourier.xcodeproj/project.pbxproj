@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5D80C1EAC0ACE0514A8D5367 /* libPods-InnerForCourier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC40793D5F8BA1F858CBA1FC /* libPods-InnerForCourier.a */; };
-		FE3C24D11E63BE6A005EF9C6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE3C24D01E63BE6A005EF9C6 /* Info.plist */; };
 		FE474DF61E2DEADC0005CD98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE474DF51E2DEADC0005CD98 /* main.m */; };
 		FE474DFF1E2DEADC0005CD98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE474DFD1E2DEADC0005CD98 /* Main.storyboard */; };
 		FE474E011E2DEADC0005CD98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE474E001E2DEADC0005CD98 /* Assets.xcassets */; };
@@ -21,6 +20,7 @@
 		FE76AA2D1E56B82D00100A9F /* XFRequestOrderCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76AA2B1E56B82D00100A9F /* XFRequestOrderCenter.m */; };
 		FE76AA321E56B85D00100A9F /* XFBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76AA301E56B85D00100A9F /* XFBaseRequest.m */; };
 		FE76AA8D1E5E9DDB00100A9F /* XFExpressDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76AA8C1E5E9DDA00100A9F /* XFExpressDetailsRequest.m */; };
+		FE7744971E66633D005094FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE7744961E66633D005094FF /* Info.plist */; };
 		FE8CEF9D1E514C1800779B5F /* XFExpressNoDataTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8CEF9B1E514C1800779B5F /* XFExpressNoDataTVCell.m */; };
 		FE8CEF9E1E514C1800779B5F /* XFExpressNoDataTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8CEF9C1E514C1800779B5F /* XFExpressNoDataTVCell.xib */; };
 		FE8CEFA31E5546B000779B5F /* XFNoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8CEFA21E5546B000779B5F /* XFNoDataView.xib */; };
@@ -101,7 +101,6 @@
 		58A1470433D789D19A84AE49 /* Pods-InnerForCourier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnerForCourier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InnerForCourier/Pods-InnerForCourier.debug.xcconfig"; sourceTree = "<group>"; };
 		86570D64667164E1B34F5F57 /* Pods-InnerForCourier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnerForCourier.release.xcconfig"; path = "Pods/Target Support Files/Pods-InnerForCourier/Pods-InnerForCourier.release.xcconfig"; sourceTree = "<group>"; };
 		AC40793D5F8BA1F858CBA1FC /* libPods-InnerForCourier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InnerForCourier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE3C24D01E63BE6A005EF9C6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE474DF11E2DEADC0005CD98 /* InnerForCourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnerForCourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE474DF51E2DEADC0005CD98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE474DFE1E2DEADC0005CD98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +129,9 @@
 		FE76AA8B1E5E9DDA00100A9F /* XFExpressDetailsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressDetailsRequest.h; sourceTree = "<group>"; };
 		FE76AA8C1E5E9DDA00100A9F /* XFExpressDetailsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFExpressDetailsRequest.m; sourceTree = "<group>"; };
 		FE76AA8E1E5E9DEF00100A9F /* XFExpressDetailsRequestKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressDetailsRequestKeys.h; sourceTree = "<group>"; };
+		FE7744941E6660B6005094FF /* XFHTTPStatusDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XFHTTPStatusDefine.h; sourceTree = "<group>"; };
+		FE7744951E6661DD005094FF /* XFRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFRequestConfig.h; sourceTree = "<group>"; };
+		FE7744961E66633D005094FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE8CEF9A1E514C1800779B5F /* XFExpressNoDataTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFExpressNoDataTVCell.h; sourceTree = "<group>"; };
 		FE8CEF9B1E514C1800779B5F /* XFExpressNoDataTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFExpressNoDataTVCell.m; sourceTree = "<group>"; };
 		FE8CEF9C1E514C1800779B5F /* XFExpressNoDataTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFExpressNoDataTVCell.xib; sourceTree = "<group>"; };
@@ -406,6 +408,8 @@
 			isa = PBXGroup;
 			children = (
 				FE72EFB31E44759A00584C1C /* XFColorDefine.h */,
+				FE7744941E6660B6005094FF /* XFHTTPStatusDefine.h */,
+				FE7744951E6661DD005094FF /* XFRequestConfig.h */,
 				FEFF69F91E486DF600639DBE /* URL */,
 			);
 			path = Define;
@@ -652,7 +656,7 @@
 		FEFF69A01E45714C00639DBE /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				FE3C24D01E63BE6A005EF9C6 /* Info.plist */,
+				FE7744961E66633D005094FF /* Info.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -978,7 +982,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE3C24D11E63BE6A005EF9C6 /* Info.plist in Resources */,
+				FE7744971E66633D005094FF /* Info.plist in Resources */,
 				FEFF69E81E45BB5F00639DBE /* XFOrderDetailsViewController.xib in Resources */,
 				FE8CEF9E1E514C1800779B5F /* XFExpressNoDataTVCell.xib in Resources */,
 				FEFF69E31E45BB4D00639DBE /* XFExpressDetailsViewController.xib in Resources */,

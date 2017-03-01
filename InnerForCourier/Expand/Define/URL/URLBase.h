@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XFRequestConfig.h"
 
 
 extern NSString *URLBaseDomain();
 
-// extern NSString *URLBasePath();

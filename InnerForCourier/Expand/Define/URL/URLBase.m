@@ -8,31 +8,20 @@
 
 #import "URLBase.h"
 
-
-/**
- 0：开发环境
- 1：测试环境
- 2：生产环境
- */
-#define DOMAIN_TYPE 1
-
-
 NSString *URLBaseDomain() {
+    NSString *domainUrlString = @"";
     
-#if DOMAIN_TYPE == 0
-    return @"http://122.144.136.72:8090/ordercenter/ocapi/";
-#elif DOMAIN_TYPE == 1
-    return @"http://oc.freshake.cn:8080/ocapi/";
-#elif DOMAIN_TYPE == 2
-    return @"";
+#ifdef BUILD_FOR_DEVELOP
+    domainUrlString = @"http://test.freshake.cn:8090/ordercenter/ocapi/";
+#elif defined BUILD_FOR_TEST
+    domainUrlString = @"http://test.freshake.cn:8090/ordercenter/ocapi/";
+#elif defined BUILD_FOR_RELEASE
+    domainUrlString = @"http://oc.freshake.cn:8080/ocapi/";
 #endif
+    
+    return domainUrlString;
 }
 
-/*
-NSString *URLBasePath() {
-    return [NSString stringWithFormat:@"%@%@", URLBaseDomain(), @"api/Phone/four/index.aspx"];
-}
- */
 
 
 

@@ -27,16 +27,16 @@
         NSDictionary *dict = [self dictWithData:responseObject];
         if (!dict) {
             [XFProgressHUD showMessage:@"数据解析失败"];
-            if (success) {
-                success(nil);
+            if (failure) {
+                failure(nil, statusCode);
             }
             return;
         }
         NSString *code = dict[KEY_CODE];
         if (![code isEqualToString:@"0"]) {
             [self handleCode:code];
-            if (success) {
-                success(nil);
+            if (failure) {
+                failure(nil, statusCode);
             }
             return;
         }
