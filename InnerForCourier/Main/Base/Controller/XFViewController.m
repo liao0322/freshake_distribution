@@ -21,6 +21,7 @@
     [self setupViews];
     [self setupNavigationBar];
     [self addSubviews];
+    [self makeConstraints];
     [self registerViews];
     
 }
@@ -41,6 +42,7 @@
 - (void)setupViews {}
 - (void)setupNavigationBar {}
 - (void)addSubviews {}
+- (void)makeConstraints {}
 - (void)registerViews {}
 
 - (void)showError:(NSError *)error {

@@ -24,6 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) XFOrderDetailsModel *orderDetails;
+@property (nonatomic) UIButton *operatButton;
 
 @end
 
@@ -38,6 +39,11 @@ static CGFloat const EstimatedCellHeight = 200.0f;
     [super viewDidLoad];
 }
 
+- (void)dealloc {
+    [self.operatButton removeObserver:self forKeyPath:@"hidden"];
+}
+
+
 #pragma mark - Override
 
 - (void)initialize {
@@ -46,18 +52,45 @@ static CGFloat const EstimatedCellHeight = 200.0f;
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = EstimatedCellHeight;
+    
+    
 }
 
 - (void)requestData {
     [super requestData];
     [XFProgressHUD showLoading];
+    
     [XFRequestOrderCenter orderDetailsWithOrderId:self.originalId success:^(XFOrderDetailsModel *orderDetailsModel) {
         [XFProgressHUD dismiss];
         if (!orderDetailsModel) return;
         self.orderDetails = orderDetailsModel;
+        
+        if ([self.orderStatus isEqualToString:@"007"]) {
+            self.operatButton.hidden = NO;
+            [self.operatButton setTitle:@"开始配送" forState:UIControlStateNormal];
+        } else if ([self.orderStatus isEqualToString:@"008"]) {
+            self.operatButton.hidden = NO;
+            [self.operatButton setTitle:@"配送完成" forState:UIControlStateNormal];
+        }
+        
         [self.tableView reloadData];
     } failure:^(NSError *error, NSInteger statusCode) {
         [self showError:error];
+    }];
+}
+
+- (void)addSubviews {
+    [super addSubviews];
+    [self.view addSubview:self.operatButton];
+
+}
+
+- (void)makeConstraints {
+    [super makeConstraints];
+    [self.operatButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(0);
+        make.height.equalTo(44);
+        make.bottom.equalTo(self.view);
     }];
 }
 
@@ -88,6 +121,7 @@ static CGFloat const EstimatedCellHeight = 200.0f;
     if (self.orderDetails) {
         sections = 5;
     }
+    
     return sections;
 }
 
@@ -150,15 +184,10 @@ static CGFloat const EstimatedCellHeight = 200.0f;
         XFOrderDetailsBasicInfoCell *cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([XFOrderDetailsBasicInfoCell class]) owner:nil options:nil] lastObject];
 
         cell.postageLabel.text = [self stringWithValue:[self.orderDetails.express_fee floatValue]];
-        
         cell.totalPriceLabel.text = [self stringWithValue:[self.orderDetails.order_amount floatValue]];
-        
         cell.couponLabel.text = [self stringWithValue:[self.orderDetails.order_AwardAmount floatValue]];
-        
         cell.pointLabel.text = [NSString stringWithString:[NSString stringWithFormat:@"- ￥%.2f", [self.orderDetails.point floatValue] / 100] defaultValue:@"￥0.00"];
-        
         cell.priceLabel.text = [self stringWithValue:[self.orderDetails.payable_amount floatValue]];
-        
         cell.paymentTypeLabel.text = [self paymentString];
         
         return cell;
@@ -184,7 +213,55 @@ static CGFloat const EstimatedCellHeight = 200.0f;
              };
 }
 
+#pragma mark - KVO
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"%@", [change valueForKey:NSKeyValueChangeNewKey]);
+    
+    // 根据底部操作按钮的隐藏与否来修改 tableview 的底部 inset
+    if (![[change valueForKey:NSKeyValueChangeNewKey] boolValue]) { // 隐藏
+        self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 44, 0);
+    }
+}
+
+#pragma mark - Custom
+
+- (void)operatButtonDidPressed:(UIButton *)operatButton {
+    [XFProgressHUD showLoading];
+    if ([operatButton.currentTitle isEqualToString:@"开始配送"]) {
+        [XFRequestOrderCenter orderOperationWithSyscode:@"002" originalNo:self.originalNo sourceCode:@"1" usercode:[XFKVCPersistence get:KEY_ACCOUNT] bizcode:@"DELV" success:^() {
+            [XFProgressHUD dismiss];
+            [operatButton setTitle:@"配送完成" forState:UIControlStateNormal];
+            
+        } failure:^(NSError *error, NSInteger statusCode) {
+            [self showError:error];
+        }];
+        
+    } else if ([operatButton.currentTitle isEqualToString:@"配送完成"]) {
+        [XFRequestOrderCenter orderOperationWithSyscode:@"002" originalNo:self.originalNo sourceCode:@"1" usercode:[XFKVCPersistence get:KEY_ACCOUNT] bizcode:@"FINH" success:^() {
+            [XFProgressHUD dismiss];
+            operatButton.hidden = YES;
+        } failure:^(NSError *error, NSInteger statusCode) {
+            [self showError:error];
+        }];
+    }
+}
+
+
+#pragma mark - LazyLoad
+
+- (UIButton *)operatButton {
+    if (!_operatButton) {
+        _operatButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_operatButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorDomina]] forState:UIControlStateNormal];
+        [_operatButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_operatButton addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:nil];
+        [_operatButton addTarget:self action:@selector(operatButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+        _operatButton.hidden = YES;
+        
+    }
+    return _operatButton;
+}
 
 
 

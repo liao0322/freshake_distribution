@@ -15,6 +15,7 @@
 - (void)setupViews;
 - (void)setupNavigationBar;
 - (void)addSubviews;
+- (void)makeConstraints;
 - (void)registerViews;
 
 

@@ -24,7 +24,7 @@
 #import "UIImage+Create.h"
 #import <AFNetworking.h>
 #import "XFProgressHUD.h"
-
+#import "XFConstThirdInfo.h"
 
 #import "XFMemoryStorage.h"
 

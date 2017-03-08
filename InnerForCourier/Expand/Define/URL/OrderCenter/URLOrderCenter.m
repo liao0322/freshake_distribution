@@ -7,7 +7,7 @@
 //
 
 #import "URLOrderCenter.h"
-#import "URLBase.h"
+
 
 NSString *URLOrderList() {
     return [NSString stringWithFormat:@"%@queryOrderList", URLBaseDomain()];

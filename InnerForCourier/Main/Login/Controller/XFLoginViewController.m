@@ -11,7 +11,7 @@
 #import "UIColor+Project.h"
 #import "AppDelegate.h"
 #import "XFRequestLogin.h"
-
+#import "JPUSHService.h"
 
 @interface XFLoginViewController ()
 
@@ -35,11 +35,17 @@
     [XFRequestLogin loginWithAccount:accountString password:passwordString success:^(NSDictionary *dict){
         [XFProgressHUD dismiss];
         [self persistenceInfoWithDict:dict]; // 持久化用户信息
+        
+        // 向极光注册tag
+        NSString *tagString = [NSString stringWithFormat:@"%@_pstag", [XFKVCPersistence get:KEY_USER_OWNERID]];
+        NSSet *tagsSet = [NSSet setWithObjects:tagString, nil];
+        [JPUSHService setTags:tagsSet callbackSelector:nil object:nil];
+        
         [[AppDelegate appDelegate] toMain];
     } failure:^(NSError *error, NSInteger statusCode) {
         if (error) {
             [self showError:error];
-        } 
+        }
     }];
 }
 
@@ -65,6 +71,11 @@
 }
 
 - (void)persistenceInfoWithDict:(NSDictionary *)dict {
+    /*
+    for (<#initialization#>; <#condition#>; <#increment#>) {
+        <#statements#>
+    }
+     */
     [XFKVCPersistence setValue:dict[KEY_RESULT][KEY_USER_CODE] forKey:KEY_ACCOUNT];
     NSDictionary *userDict = dict[KEY_RESULT][KEY_USER];
     [XFKVCPersistence setValue:userDict[KEY_USER_ID] forKey:KEY_USER_ID];

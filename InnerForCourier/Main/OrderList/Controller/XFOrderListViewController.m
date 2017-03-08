@@ -51,6 +51,11 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [XFProgressHUD showLoading];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self refreshData];
 }
 
@@ -81,9 +86,7 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
     [super registerViews];
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XFOrderListTVCell class]) bundle:nil] forCellReuseIdentifier:OrderListTVCellID];
-    
     [self.tableView registerClass:[XFOrderListSectionHeaderView class]forHeaderFooterViewReuseIdentifier:OrderListSectionHeaderID];
-    
     [self.tableView registerClass:[XFOrderListSectionFooterView class]forHeaderFooterViewReuseIdentifier:OrderListSectionFooterID];
 }
 
@@ -124,10 +127,6 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
         [XFProgressHUD dismiss];
         [self requestDidCompleted];
         
-        if (statusCode != 200) {
-            [XFProgressHUD showMessage:@"返回异常"];
-            return;
-        }
         if (dataArray == nil || dataArray.count == 0) {
             self.noMore = YES;
             [self.refreshFooter endRefreshingWithNoMoreData];
