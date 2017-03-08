@@ -113,12 +113,8 @@
     NSDictionary * userInfo = [notification userInfo];
     NSString *content = [userInfo valueForKey:@"content"]; // 推送的内容
     NSLog(@"内容：%@", content);
-    
     NSDictionary *extras = [userInfo valueForKey:@"extras"]; // 用户自定义参数
-    
     NSLog(@"%@", extras);
-    
-    
     NSString *customizeField1 = [extras valueForKey:@"customizeField1"]; //服务端传递的Extras附加字段，key是自己定义的
     
 }
