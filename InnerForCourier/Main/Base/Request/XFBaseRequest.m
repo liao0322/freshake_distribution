@@ -38,7 +38,7 @@ static NSDictionary* codeDict;
 
 + (NSDictionary *)dictWithData:(NSData *)data {
     NSError *error = nil;
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     return error ? nil : dict;
 }
 

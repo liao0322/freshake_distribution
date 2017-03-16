@@ -72,6 +72,8 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
     self.orderStatus = UNDELIVERY;
     self.page = 1;
     self.noMore = NO;
+    
+    [self checkForUpdates];
 }
 
 - (void)setupViews {
@@ -174,6 +176,61 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
     [[AppDelegate appDelegate] toLogin];
 }
 
+- (void)checkForUpdates {
+    // 获取当前版本
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    NSString *currentVersionString = infoDic[@"CFBundleShortVersionString"];
+    
+    NSString *newCurrentVersionString = [currentVersionString stringByReplacingOccurrencesOfString:@"." withString:@""];
+    
+    [XFRequestOrderCenter checkForUpdatesWithCurrentVersion:newCurrentVersionString success:^(NSDictionary *dict) {
+        
+        NSString *releaseInfo = dict[@"appContext"];
+        
+        NSString *appStoreVersion = dict[@"appName"];
+        
+        if ([self compareCurrentVersion:currentVersionString appStoreVersion:appStoreVersion]) {
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"版本更新" message:@"检测到新版本，是否更新？\n检测到新版本，是否更新？\n检测到新版本，是否更新？\n检测到新版本，是否更新？\n检测到新版本，是否更新？\n检测到新版本，是否更新？" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                NSURL *url = [NSURL URLWithString:@"https://beta.bugly.qq.com/l5t9"];
+                UIApplication *application = [UIApplication sharedApplication];
+                if ([application canOpenURL:url]) {
+                    [application openURL:url];
+                }
+            }];
+            
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            
+            BOOL isUpgrade = [dict[@"isupgrade"] boolValue];
+            
+            [alert addAction:updateAction];
+            if (!isUpgrade) { // 强制升级
+                [alert addAction:cancelAction];
+            }
+            
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+            
+        } else {
+            NSLog(@"版本号好像比商店大噢!检测到不需要更新");
+        }
+        
+    } failure:^(NSError *error, NSInteger statusCode) {
+        [self showError:error];
+    }];
+}
+
+- (BOOL)compareCurrentVersion:(NSString *)currentVersion appStoreVersion:(NSString *)appStoreVersion {
+    
+    if ([currentVersion compare:appStoreVersion options:NSNumericSearch] == NSOrderedAscending) {
+        // 有新版本
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
 #pragma mark - UITableViewDataSource
 

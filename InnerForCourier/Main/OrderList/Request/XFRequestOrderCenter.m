@@ -143,6 +143,34 @@
     
 }
 
++ (void)checkForUpdatesWithCurrentVersion:(NSString *)currentVersion
+                                  success:(void (^)(NSDictionary *dict))success
+                                  failure:(Failed)failure {
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://test.freshake.cn:9970/api/Phone/Fifth/index.aspx?page=GetCheck&appNo=%@&type=4", currentVersion];
+    
+    [XFNetworking GET:urlString parameters:nil success:^(id responseObject, NSInteger statusCode) {
+        NSDictionary *dict = [self dictWithData:responseObject];
+        BOOL isSuccess = [dict[@"issuccess"] boolValue];
+        
+        if (statusCode != 200 || dict == nil || !isSuccess) {
+            if (failure) {
+                failure(nil, statusCode);
+            }
+            return;
+        }
+        
+        if (success) {
+            success(dict);
+        }
+        
+    } failure:^(NSError *error, NSInteger statusCode) {
+        if (failure) {
+            failure(error, statusCode);
+        }
+    }];
+    
+}
 
 
 @end

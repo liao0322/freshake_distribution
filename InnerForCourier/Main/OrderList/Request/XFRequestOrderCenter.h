@@ -61,6 +61,8 @@
                           failure:(Failed)failure;
 
 
-
++ (void)checkForUpdatesWithCurrentVersion:(NSString *)currentVersion
+                                  success:(void (^)(NSDictionary *dict))success
+                                  failure:(Failed)failure;
 
 @end
