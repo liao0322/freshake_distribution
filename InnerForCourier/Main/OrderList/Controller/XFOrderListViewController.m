@@ -191,7 +191,7 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
         
         if ([self compareCurrentVersion:currentVersionString appStoreVersion:appStoreVersion]) {
             
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"版本更新" message:@"检测到新版本，是否更新？\n检测到新版本，是否更新？\n检测到新版本，是否更新？\n检测到新版本，是否更新？\n检测到新版本，是否更新？\n检测到新版本，是否更新？" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"版本更新" message:@"检测到新版本，是否更新" preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 

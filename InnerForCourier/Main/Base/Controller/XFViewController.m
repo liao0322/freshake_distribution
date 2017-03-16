@@ -46,6 +46,9 @@
 - (void)registerViews {}
 
 - (void)showError:(NSError *)error {
+    if (error == nil) {
+        return;
+    }
     if (error.code == -1009) {
         [XFProgressHUD showMessage:@"无网络连接!"];
     }

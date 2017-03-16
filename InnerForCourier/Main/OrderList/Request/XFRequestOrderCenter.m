@@ -147,7 +147,7 @@
                                   success:(void (^)(NSDictionary *dict))success
                                   failure:(Failed)failure {
     
-    NSString *urlString = [NSString stringWithFormat:@"http://test.freshake.cn:9970/api/Phone/Fifth/index.aspx?page=GetCheck&appNo=%@&type=4", currentVersion];
+    NSString *urlString = [NSString stringWithFormat:@"http://test.freshake.cn:9970/api/Phone/Fifth/index.aspx?page=GetCheck&appNo=%@&type=8", currentVersion];
     
     [XFNetworking GET:urlString parameters:nil success:^(id responseObject, NSInteger statusCode) {
         NSDictionary *dict = [self dictWithData:responseObject];
