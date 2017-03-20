@@ -12,11 +12,11 @@
 
 @interface XFOrderListTVCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *unitLabel;
-@property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (weak, nonatomic) IBOutlet UIImageView    *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel        *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel        *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel        *unitLabel;
+@property (weak, nonatomic) IBOutlet UILabel        *countLabel;
 
 @end
 

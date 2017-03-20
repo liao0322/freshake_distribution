@@ -11,13 +11,13 @@
 
 @interface XFOrderListSectionFooterView ()
 
-@property (nonatomic) UIView *bgView;
+@property (nonatomic) UIView        *bgView;
 
-@property (nonatomic) UILabel *totalCountTitleLabel;
-@property (nonatomic) UILabel *totalCountLabel;
+@property (nonatomic) UILabel       *totalCountTitleLabel;
+@property (nonatomic) UILabel       *totalCountLabel;
 
-@property (nonatomic) UILabel *totalPriceTitleLabel;
-@property (nonatomic) UILabel *totalPriceLabel;
+@property (nonatomic) UILabel       *totalPriceTitleLabel;
+@property (nonatomic) UILabel       *totalPriceLabel;
 
 @property (copy, nonatomic) NSMutableArray *titles;
 @property (copy, nonatomic) NSMutableArray *buttons;

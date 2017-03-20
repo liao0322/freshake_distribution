@@ -101,22 +101,6 @@
                           channel:channel
                  apsForProduction:isProduction
             advertisingIdentifier:nil];
-    
-    // 监听 自定义消息
-    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
-    [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kJPFNetworkDidReceiveMessageNotification object:nil];
-}
-
-// 接受到自定义消息
-- (void)networkDidReceiveMessage:(NSNotification *)notification {
-    NSLog(@"接收到自定义消息的推送");
-    NSDictionary * userInfo = [notification userInfo];
-    NSString *content = [userInfo valueForKey:@"content"]; // 推送的内容
-    NSLog(@"内容：%@", content);
-    NSDictionary *extras = [userInfo valueForKey:@"extras"]; // 用户自定义参数
-    NSLog(@"%@", extras);
-    NSString *customizeField1 = [extras valueForKey:@"customizeField1"]; //服务端传递的Extras附加字段，key是自己定义的
-    
 }
 
 
@@ -150,15 +134,8 @@
     if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
         [JPUSHService handleRemoteNotification:userInfo];
     }
-    
     if ([XFKVCPersistence contain:KEY_ACCOUNT]) { // 已登录
-        XFOrderDetailsViewController *orderDetailsVC = [XFOrderDetailsViewController new];
-        
-        orderDetailsVC.originalNo = userInfo[@"originalNo"];
-        orderDetailsVC.originalId = userInfo[@"originalId"];
-        orderDetailsVC.orderStatus = userInfo[@"orderStatus"];
-        
-        [(UINavigationController *)self.window.rootViewController pushViewController:orderDetailsVC animated:YES];
+        [self pushToOrderDetailsViewControllerWithUserInfo:userInfo];
         
     } else {
         [self toLogin];
@@ -184,11 +161,29 @@
         
         if (application.applicationState == UIApplicationStateActive) {
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"收到推送消息" message:userInfo[@"aps"][@"alert"] delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil ,nil];
-            [alert show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"收到推送消息" message:userInfo[@"aps"][@"alert"] preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                [self pushToOrderDetailsViewControllerWithUserInfo:userInfo];
+            }];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消 " style:UIAlertActionStyleCancel handler:nil];
+            
+            [alert addAction:confirmAction];
+            [alert addAction:cancelAction];
+            [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
         }
     }
     return;
+}
+- (void)pushToOrderDetailsViewControllerWithUserInfo:(NSDictionary *)userInfoDict {
+    XFOrderDetailsViewController *orderDetailsVC = [XFOrderDetailsViewController new];
+    
+    orderDetailsVC.originalNo = userInfoDict[@"originalNo"];
+    orderDetailsVC.originalId = userInfoDict[@"originalId"];
+    orderDetailsVC.orderStatus = userInfoDict[@"orderStatus"];
+    
+    [(UINavigationController *)self.window.rootViewController pushViewController:orderDetailsVC animated:YES];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

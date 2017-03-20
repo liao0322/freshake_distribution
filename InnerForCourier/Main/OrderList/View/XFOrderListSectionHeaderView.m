@@ -10,11 +10,11 @@
 
 @interface XFOrderListSectionHeaderView ()
 
-@property (nonatomic) UIView *bgView;
-@property (nonatomic) UIImageView *iconImageView;
-@property (nonatomic) UILabel *orderNumberLabel;
-@property (nonatomic) UIButton *operationButton;
-@property (nonatomic) UIView *separatorLine;
+@property (nonatomic) UIView            *bgView;
+@property (nonatomic) UIImageView       *iconImageView;
+@property (nonatomic) UILabel           *orderNumberLabel;
+@property (nonatomic) UIButton          *operationButton;
+@property (nonatomic) UIView            *separatorLine;
 
 @end
 

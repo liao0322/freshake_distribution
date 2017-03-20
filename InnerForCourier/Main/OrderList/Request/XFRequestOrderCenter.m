@@ -147,7 +147,17 @@
                                   success:(void (^)(NSDictionary *dict))success
                                   failure:(Failed)failure {
     
-    NSString *urlString = [NSString stringWithFormat:@"http://test.freshake.cn:9970/api/Phone/Fifth/index.aspx?page=GetCheck&appNo=%@&type=8", currentVersion];
+    NSString *domainUrlString = @"";
+    
+#ifdef BUILD_FOR_DEVELOP
+    domainUrlString = @"http://test.freshake.cn:9970";
+#elif defined BUILD_FOR_TEST
+    domainUrlString = @"http://test.freshake.cn:9970";
+#elif defined BUILD_FOR_RELEASE
+    domainUrlString = @"http://h5.freshake.cn";
+#endif
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@/api/Phone/Fifth/index.aspx?page=GetCheck&appNo=%@&type=8", domainUrlString, currentVersion];
     
     [XFNetworking GET:urlString parameters:nil success:^(id responseObject, NSInteger statusCode) {
         NSDictionary *dict = [self dictWithData:responseObject];
