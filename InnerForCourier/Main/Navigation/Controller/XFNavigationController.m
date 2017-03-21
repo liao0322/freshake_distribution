@@ -9,7 +9,6 @@
 #import "XFNavigationController.h"
 
 @interface XFNavigationController ()
-
 @end
 
 @implementation XFNavigationController
@@ -21,5 +20,16 @@
     
 }
 
+#pragma mark - Override
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    if (self.viewControllers.count != 0) {
+        
+        [viewController setHidesBottomBarWhenPushed:YES];
+    }
+    
+    [super pushViewController:viewController animated:animated];
+}
 
 @end

@@ -18,9 +18,12 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - PNChart (0.8.9):
+    - UICountingLabel (~> 1.2.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -28,6 +31,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
+  - PNChart (~> 0.8.9)
   - SDWebImage (= 3.8.2)
 
 SPEC CHECKSUMS:
@@ -36,8 +40,10 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
-PODFILE CHECKSUM: 08dcf73464c2263c6224f21ed38ad237a0fa484b
+PODFILE CHECKSUM: f62b655d3deffb180d0973216edd30ed33d30536
 
 COCOAPODS: 1.1.1

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "XFKVCPersistence.h"
+#import "NSDate+Extension.h"
 
 // 引入JPush功能所需头文件
 #import "JPUSHService.h"
@@ -25,6 +26,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window.backgroundColor = [UIColor whiteColor];
     [self setupJPUSHWithOptions:launchOptions];
     
     if ([XFKVCPersistence contain:KEY_ACCOUNT]) { // 已登录
@@ -41,7 +43,7 @@
 }
 
 - (void)toMain {
-    [self setRootViewControllerWithIdentifier:@"NavigationSB"];
+    [self setRootViewControllerWithIdentifier:@"TabBarSB"];
 }
 
 - (void)setRootViewControllerWithIdentifier:(NSString *)identifier {

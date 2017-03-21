@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i9y-Da-Q5M">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--我的-->
+        <scene sceneID="KQG-uO-d7w">
+            <objects>
+                <navigationController id="i9y-Da-Q5M" customClass="XFNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="tabbar_me" selectedImage="tabbar_me_selected" id="hwu-7u-tCx"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="PYY-cv-xyo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kl5-mU-p2p" kind="relationship" relationship="rootViewController" id="90N-PT-m6t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nms-CS-6as" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-47" y="592"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="l51-zr-Em3">
+            <objects>
+                <viewController id="kl5-mU-p2p" customClass="XFMeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lgW-HY-gd9"/>
+                        <viewControllerLayoutGuide type="bottom" id="aCb-rq-mKj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gQ8-i6-4ii">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-0o-Sj6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kl5-mU-p2p" id="vIH-1d-uJq"/>
+                                    <outlet property="delegate" destination="kl5-mU-p2p" id="3eI-OF-xK4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6wW-0o-Sj6" secondAttribute="trailing" id="8FT-Re-spS"/>
+                            <constraint firstItem="6wW-0o-Sj6" firstAttribute="leading" secondItem="gQ8-i6-4ii" secondAttribute="leading" id="Fkn-kN-53R"/>
+                            <constraint firstItem="6wW-0o-Sj6" firstAttribute="top" secondItem="gQ8-i6-4ii" secondAttribute="top" id="LxA-J3-hhv"/>
+                            <constraint firstAttribute="bottom" secondItem="6wW-0o-Sj6" secondAttribute="bottom" id="y5C-RR-gyS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的" id="j3b-7Z-819">
+                        <barButtonItem key="rightBarButtonItem" title="注销" id="Veb-CA-iTQ">
+                            <connections>
+                                <action selector="logout:" destination="kl5-mU-p2p" id="nfr-xr-KzO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amf-wI-kg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="591"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_me" width="25" height="25"/>
+        <image name="tabbar_me_selected" width="25" height="25"/>
+    </resources>
+</document>

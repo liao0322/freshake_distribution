@@ -11,4 +11,6 @@ target 'InnerForCourier' do
   pod 'Masonry', '~> 1.0.2'
   pod 'MJExtension', '~> 3.0.13'
   pod 'MJRefresh', '~> 3.1.12'
+  pod 'PNChart', '~> 0.8.9'
+
 end

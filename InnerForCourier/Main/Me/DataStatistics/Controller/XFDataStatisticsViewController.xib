@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XFDataStatisticsViewController">
+            <connections>
+                <outlet property="chartView" destination="epY-Hh-zlz" id="cfe-su-MCB"/>
+                <outlet property="collectionView" destination="5ci-Kn-0Xx" id="XBJ-38-wfS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5ci-Kn-0Xx">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="193"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="193" id="dL6-OW-6Gn"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8X1-Ba-Nkk">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Rl5-yl-ZF1"/>
+                        <outlet property="delegate" destination="-1" id="yby-Vp-1rz"/>
+                    </connections>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epY-Hh-zlz" customClass="LineChartView" customModule="Charts">
+                    <rect key="frame" x="0.0" y="262" width="375" height="395"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近30天订单数据统计" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRP-zp-1Ko">
+                    <rect key="frame" x="83.5" y="223" width="208.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5ci-Kn-0Xx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="14w-ix-Add"/>
+                <constraint firstItem="cRP-zp-1Ko" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GxF-ze-VSf"/>
+                <constraint firstItem="epY-Hh-zlz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ifn-eu-ccW"/>
+                <constraint firstItem="5ci-Kn-0Xx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LKe-2f-ET9"/>
+                <constraint firstItem="cRP-zp-1Ko" firstAttribute="top" secondItem="5ci-Kn-0Xx" secondAttribute="bottom" constant="30" id="MVW-KA-YKA"/>
+                <constraint firstAttribute="trailing" secondItem="5ci-Kn-0Xx" secondAttribute="trailing" id="Oxg-gO-xTE"/>
+                <constraint firstAttribute="bottom" secondItem="epY-Hh-zlz" secondAttribute="bottom" constant="10" id="UsS-mC-M88"/>
+                <constraint firstItem="epY-Hh-zlz" firstAttribute="top" secondItem="cRP-zp-1Ko" secondAttribute="bottom" constant="15" id="aLH-1d-ctw"/>
+                <constraint firstAttribute="trailing" secondItem="epY-Hh-zlz" secondAttribute="trailing" id="dZR-ow-SOL"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

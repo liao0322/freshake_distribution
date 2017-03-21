@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--订单-->
+        <scene sceneID="3VB-gi-df5">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationSB" id="lcX-5q-yGT" customClass="XFNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="订单" image="tabbar_home" selectedImage="tabbar_home_selected" id="PIP-Ja-1x0"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="oW6-WL-x9r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="SMt-hr-bdJ">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="tt4-z0-cSn" kind="relationship" relationship="rootViewController" id="zxz-nk-e8f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ECD-Iu-r8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68" y="-551"/>
+        </scene>
+        <!--Order List View Controller-->
+        <scene sceneID="hcc-Dm-Oke">
+            <objects>
+                <viewController id="tt4-z0-cSn" customClass="XFOrderListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="asd-9I-c6R"/>
+                        <viewControllerLayoutGuide type="bottom" id="gf4-hC-nR4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a8w-S1-9ej">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yAX-7e-SX4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tt4-z0-cSn" id="kY9-Xq-YN7"/>
+                                    <outlet property="delegate" destination="tt4-z0-cSn" id="Whg-3d-WaF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yAX-7e-SX4" secondAttribute="trailing" id="Odg-Vg-g1m"/>
+                            <constraint firstAttribute="bottom" secondItem="yAX-7e-SX4" secondAttribute="bottom" id="WU0-Ib-0n7"/>
+                            <constraint firstItem="yAX-7e-SX4" firstAttribute="top" secondItem="a8w-S1-9ej" secondAttribute="top" id="rYO-js-EGr"/>
+                            <constraint firstItem="yAX-7e-SX4" firstAttribute="leading" secondItem="a8w-S1-9ej" secondAttribute="leading" id="vzw-Lm-Hlz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2l6-7s-4JW">
+                        <connections>
+                            <outlet property="titleView" destination="rEj-ca-ba4" id="qVN-8r-qEI"/>
+                        </connections>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="yAX-7e-SX4" id="3ze-zG-aXN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g6j-lb-d8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="rEj-ca-ba4">
+                    <rect key="frame" x="0.0" y="0.0" width="220" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="未配送"/>
+                        <segment title="配送中"/>
+                        <segment title="已配送"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentControlValueChanged:" destination="tt4-z0-cSn" eventType="valueChanged" id="H1G-aQ-o4B"/>
+                    </connections>
+                </segmentedControl>
+            </objects>
+            <point key="canvasLocation" x="625" y="-552"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_home" width="25" height="25"/>
+        <image name="tabbar_home_selected" width="25" height="25"/>
+    </resources>
+</document>
