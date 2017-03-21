@@ -35,6 +35,7 @@
 		FE9A919B1E80DCFF00B2481A /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE9A91951E80DCED00B2481A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FE9A91A21E80F18A00B2481A /* XFOrderChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9A91A11E80F18A00B2481A /* XFOrderChart.m */; };
 		FE9A91AA1E8121D000B2481A /* DayAxisValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9A91A91E8121D000B2481A /* DayAxisValueFormatter.m */; };
+		FE9A91AD1E81517100B2481A /* XFOrderCount.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9A91AC1E81517100B2481A /* XFOrderCount.m */; };
 		FEA20E941E4D6FF200FAD315 /* XFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */; };
 		FEAD14941E49B5C5000962D3 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14931E49B5C5000962D3 /* TTTAttributedLabel.m */; };
 		FEAD149A1E49CFFB000962D3 /* XFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14991E49CFFB000962D3 /* XFModel.m */; };
@@ -213,6 +214,8 @@
 		FE9A91A11E80F18A00B2481A /* XFOrderChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderChart.m; sourceTree = "<group>"; };
 		FE9A91A81E8121D000B2481A /* DayAxisValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayAxisValueFormatter.h; sourceTree = "<group>"; };
 		FE9A91A91E8121D000B2481A /* DayAxisValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayAxisValueFormatter.m; sourceTree = "<group>"; };
+		FE9A91AB1E81517100B2481A /* XFOrderCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderCount.h; sourceTree = "<group>"; };
+		FE9A91AC1E81517100B2481A /* XFOrderCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderCount.m; sourceTree = "<group>"; };
 		FEA20E921E4D6FF200FAD315 /* XFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFTableViewCell.h; sourceTree = "<group>"; };
 		FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFTableViewCell.m; sourceTree = "<group>"; };
 		FEAD14921E49B5C5000962D3 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
@@ -589,6 +592,8 @@
 			children = (
 				FE9A91A01E80F18A00B2481A /* XFOrderChart.h */,
 				FE9A91A11E80F18A00B2481A /* XFOrderChart.m */,
+				FE9A91AB1E81517100B2481A /* XFOrderCount.h */,
+				FE9A91AC1E81517100B2481A /* XFOrderCount.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1464,6 +1469,7 @@
 				FEED31A71E7F802000388826 /* XFOrderDetailsInvoiceCell.m in Sources */,
 				FE76AA281E56B75E00100A9F /* URLLogin.m in Sources */,
 				FEED31A51E7F802000388826 /* XFOrderDetailsDeliverAddressTVCell.m in Sources */,
+				FE9A91AD1E81517100B2481A /* XFOrderCount.m in Sources */,
 				FEAD14941E49B5C5000962D3 /* TTTAttributedLabel.m in Sources */,
 				FEED31D01E80B66F00388826 /* XFDataStatisticsRequest.m in Sources */,
 				FEED31AE1E7F802000388826 /* XFGoods.m in Sources */,

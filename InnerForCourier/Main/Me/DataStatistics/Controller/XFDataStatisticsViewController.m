@@ -15,13 +15,14 @@
 #import "InnerForCourier-Bridging-Header.h"
 #import "DayAxisValueFormatter.h"
 #import "NSDate+Extension.h"
+#import "XFOrderCount.h"
 
 @interface XFDataStatisticsViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, ChartViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (weak, nonatomic) IBOutlet LineChartView *chartView;
 @property (nonatomic) NSMutableArray *chartDataArray;
-@property (nonatomic) NSArray *titlesArray;
+@property (nonatomic) NSMutableArray *titlesArray;
 
 @end
 
@@ -43,6 +44,47 @@ static NSString * const CVCellID = @"CVCellID";
     
     [XFDataStatisticsRequest orderCountWithOrderStatus:@"007" success:^(NSString *countString) {
         
+        XFOrderCount *count = self.titlesArray[1];
+        count.count = countString;
+        
+        
+        XFOrderCount *totalCount = self.titlesArray[0];
+        NSString *totalValue = totalCount.count;
+        NSInteger total = [totalValue integerValue] + [countString integerValue];
+        totalCount.count = [NSString stringWithFormat:@"%ld", total];
+
+        [self.collectionView reloadData];
+        
+    } failure:^(NSError *error, NSInteger statusCode) {
+        
+    }];
+    
+    [XFDataStatisticsRequest orderCountWithOrderStatus:@"008" success:^(NSString *countString) {
+        
+        XFOrderCount *count = self.titlesArray[2];
+        count.count = countString;
+        
+        XFOrderCount *totalCount = self.titlesArray[0];
+        NSString *totalValue = totalCount.count;
+        NSInteger total = [totalValue integerValue] + [countString integerValue];
+        totalCount.count = [NSString stringWithFormat:@"%ld", total];
+        [self.collectionView reloadData];
+        
+    } failure:^(NSError *error, NSInteger statusCode) {
+        
+    }];
+    
+    [XFDataStatisticsRequest orderCountWithOrderStatus:@"009" success:^(NSString *countString) {
+        
+        XFOrderCount *count = self.titlesArray[3];
+        count.count = countString;
+        
+        XFOrderCount *totalCount = self.titlesArray[0];
+        NSString *totalValue = totalCount.count;
+        NSInteger total = [totalValue integerValue] + [countString integerValue];
+        totalCount.count = [NSString stringWithFormat:@"%ld", total];
+        [self.collectionView reloadData];
+        
     } failure:^(NSError *error, NSInteger statusCode) {
         
     }];
@@ -59,6 +101,24 @@ static NSString * const CVCellID = @"CVCellID";
 
 - (void)initialize {
     [super initialize];
+    XFOrderCount *count1 = [XFOrderCount new];
+    count1.title = @"订单总数";
+    count1.count = @"0";
+    XFOrderCount *count2 = [XFOrderCount new];
+    count2.title = @"未配送";
+    count2.count = @"0";
+    XFOrderCount *count3 = [XFOrderCount new];
+    count3.title = @"配送中";
+    count3.count = @"0";
+    XFOrderCount *count4 = [XFOrderCount new];
+    count4.title = @"已配送";
+    count4.count = @"0";
+    
+    [self.titlesArray addObject:count1];
+    [self.titlesArray addObject:count2];
+    [self.titlesArray addObject:count3];
+    [self.titlesArray addObject:count4];
+
 }
 
 - (void)setupViews {
@@ -153,6 +213,7 @@ static NSString * const CVCellID = @"CVCellID";
         set1.fillColor = [UIColor colorWithRed:51/255.0 green:181/255.0 blue:229/255.0 alpha:1.0];
         set1.highlightColor = [UIColor colorWithRed:224/255.0 green:117/255.0 blue:117/255.0 alpha:1.0];
         set1.drawCircleHoleEnabled = NO;
+        set1.highlightEnabled = NO;
         
         NSMutableArray *dataSets = [[NSMutableArray alloc] init];
         [dataSets addObject:set1];
@@ -166,8 +227,6 @@ static NSString * const CVCellID = @"CVCellID";
     
 }
 
-
-
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -176,8 +235,9 @@ static NSString * const CVCellID = @"CVCellID";
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     XFDataStatisticsCVCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CVCellID forIndexPath:indexPath];
-    cell.titleLabel.text = self.titlesArray[indexPath.row];
-    cell.countLabel.text = @"0";
+    XFOrderCount *count = self.titlesArray[indexPath.row];
+    cell.titleLabel.text = count.title;
+    cell.countLabel.text = count.count;
     return cell;
 }
 
@@ -239,8 +299,11 @@ static NSString * const CVCellID = @"CVCellID";
     return _chartDataArray;
 }
 
-- (NSArray *)titlesArray {
-    return @[@"订单总数", @"未配送", @"配送中", @"已配送"];
+- (NSMutableArray *)titlesArray {
+    if (!_titlesArray) {
+        _titlesArray = [NSMutableArray arrayWithCapacity:4];
+    }
+    return _titlesArray;
 }
 
 @end

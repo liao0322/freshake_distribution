@@ -34,7 +34,7 @@
             }
             return;
         }
-        resultString = dict[KEY_RESULT];
+        resultString = [dict[KEY_RESULT] stringValue];
         if (success) {
             success(resultString);
         }
