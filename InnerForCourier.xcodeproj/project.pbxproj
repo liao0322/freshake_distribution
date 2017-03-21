@@ -34,7 +34,6 @@
 		FE9A919A1E80DCFF00B2481A /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9A91951E80DCED00B2481A /* Charts.framework */; };
 		FE9A919B1E80DCFF00B2481A /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE9A91951E80DCED00B2481A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FE9A91A21E80F18A00B2481A /* XFOrderChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9A91A11E80F18A00B2481A /* XFOrderChart.m */; };
-		FE9A91A71E811BFB00B2481A /* DateValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9A91A61E811BFB00B2481A /* DateValueFormatter.m */; };
 		FE9A91AA1E8121D000B2481A /* DayAxisValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9A91A91E8121D000B2481A /* DayAxisValueFormatter.m */; };
 		FEA20E941E4D6FF200FAD315 /* XFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA20E931E4D6FF200FAD315 /* XFTableViewCell.m */; };
 		FEAD14941E49B5C5000962D3 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD14931E49B5C5000962D3 /* TTTAttributedLabel.m */; };
@@ -212,8 +211,6 @@
 		FE9A918E1E80DCED00B2481A /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		FE9A91A01E80F18A00B2481A /* XFOrderChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFOrderChart.h; sourceTree = "<group>"; };
 		FE9A91A11E80F18A00B2481A /* XFOrderChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFOrderChart.m; sourceTree = "<group>"; };
-		FE9A91A51E811BFB00B2481A /* DateValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateValueFormatter.h; sourceTree = "<group>"; };
-		FE9A91A61E811BFB00B2481A /* DateValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateValueFormatter.m; sourceTree = "<group>"; };
 		FE9A91A81E8121D000B2481A /* DayAxisValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayAxisValueFormatter.h; sourceTree = "<group>"; };
 		FE9A91A91E8121D000B2481A /* DayAxisValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayAxisValueFormatter.m; sourceTree = "<group>"; };
 		FEA20E921E4D6FF200FAD315 /* XFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFTableViewCell.h; sourceTree = "<group>"; };
@@ -722,8 +719,6 @@
 			children = (
 				FE9A91A81E8121D000B2481A /* DayAxisValueFormatter.h */,
 				FE9A91A91E8121D000B2481A /* DayAxisValueFormatter.m */,
-				FE9A91A51E811BFB00B2481A /* DateValueFormatter.h */,
-				FE9A91A61E811BFB00B2481A /* DateValueFormatter.m */,
 				FEED31B71E7F806200388826 /* XFDataStatisticsViewController.h */,
 				FEED31B81E7F806200388826 /* XFDataStatisticsViewController.m */,
 				FEED31B91E7F806200388826 /* XFDataStatisticsViewController.xib */,
@@ -1420,7 +1415,6 @@
 				FEED319A1E7F802000388826 /* XFExpressNoDataTVCell.m in Sources */,
 				FEFF6A0B1E495B0600639DBE /* XFProgressHUD.m in Sources */,
 				FEED31961E7F802000388826 /* XFExpressDetailsRequest.m in Sources */,
-				FE9A91A71E811BFB00B2481A /* DateValueFormatter.m in Sources */,
 				FEED31A11E7F802000388826 /* XFOrderDetailsAddressCell.m in Sources */,
 				FEFF69B71E45743600639DBE /* UIView+Frame.m in Sources */,
 				FEED31A91E7F802000388826 /* XFOrderDetailsNoInvoiceCell.m in Sources */,
