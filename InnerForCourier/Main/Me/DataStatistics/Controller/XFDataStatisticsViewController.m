@@ -89,10 +89,13 @@ static NSString * const CVCellID = @"CVCellID";
         
     }];
     
-    [XFDataStatisticsRequest orderListWithStartDate:/*[NSDate stringDateWithDate:[NSDate date] formatString:@"yyyy-MM-dd"]*/@"2016-03-21" Success:^(NSArray *dataArray, NSInteger statusCode) {
+    [XFDataStatisticsRequest orderListWithEndDate:[NSDate stringDateWithDate:[NSDate now] formatString:@"yyyy-MM-dd"] Success:^(NSArray *dataArray, NSInteger statusCode) {
         [self.chartDataArray removeAllObjects];
         [self.chartDataArray addObjectsFromArray:dataArray];
-        [self refreshChartData];
+        if (self.chartDataArray.count != 0 || self.chartDataArray.count != 1) {
+            [self refreshChartData];
+        }
+        
     } failure:^(NSError *error, NSInteger statusCode) {
         
     }];
@@ -138,6 +141,7 @@ static NSString * const CVCellID = @"CVCellID";
     
     _chartView.legend.enabled = NO;
     _chartView.minOffset = 20;
+    _chartView.noDataText = @"暂无订单数据";
     
     
     ChartXAxis *xAxis = _chartView.xAxis;
@@ -244,7 +248,21 @@ static NSString * const CVCellID = @"CVCellID";
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    /*
     NSLog(@"点击了 %ld", indexPath.section);
+    XFOrderCount *count = self.titlesArray[indexPath.row];
+    
+    if ([count.title isEqualToString:@"未配送"]) {
+        
+    } else if ([count.title isEqualToString:@"配送中"]) {
+        
+    } else if ([count.title isEqualToString:@"已配送"]) {
+        
+    }
+    self.tabBarController.selectedIndex = 0;
+    self.tabBarController.viewControllers[]
+*/
     
 }
 

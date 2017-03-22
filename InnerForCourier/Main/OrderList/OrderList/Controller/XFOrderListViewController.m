@@ -167,7 +167,6 @@ static NSString * const OrderListSectionFooterID = @"OrderListSectionFooterID";
     }
     [XFProgressHUD showLoading];
     [self refreshData];
-
 }
 
 - (void)checkForUpdates {

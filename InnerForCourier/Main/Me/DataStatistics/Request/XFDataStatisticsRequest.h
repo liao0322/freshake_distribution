@@ -14,7 +14,7 @@
                           success:(void (^)(NSString *countString))success
                           failure:(Failed)failure;
 
-+ (void)orderListWithStartDate:(NSString *)startDate
++ (void)orderListWithEndDate:(NSString *)startDate
                        Success:(SuccessWithArray)success
                        failure:(Failed)failure;
 
