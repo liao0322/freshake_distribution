@@ -178,14 +178,17 @@
     }
     return;
 }
+
 - (void)pushToOrderDetailsViewControllerWithUserInfo:(NSDictionary *)userInfoDict {
     XFOrderDetailsViewController *orderDetailsVC = [XFOrderDetailsViewController new];
     
     orderDetailsVC.originalNo = userInfoDict[@"originalNo"];
     orderDetailsVC.originalId = userInfoDict[@"originalId"];
     orderDetailsVC.orderStatus = userInfoDict[@"orderStatus"];
+    UITabBarController *tbvc = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *navc = (UINavigationController *)tbvc.viewControllers[0];
     
-    [(UINavigationController *)self.window.rootViewController pushViewController:orderDetailsVC animated:YES];
+    [navc pushViewController:orderDetailsVC animated:YES];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

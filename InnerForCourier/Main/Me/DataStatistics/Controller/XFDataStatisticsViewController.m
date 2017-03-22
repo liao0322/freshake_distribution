@@ -51,7 +51,7 @@ static NSString * const CVCellID = @"CVCellID";
         XFOrderCount *totalCount = self.titlesArray[0];
         NSString *totalValue = totalCount.count;
         NSInteger total = [totalValue integerValue] + [countString integerValue];
-        totalCount.count = [NSString stringWithFormat:@"%ld", total];
+        totalCount.count = [NSString stringWithFormat:@"%ld", (long)total];
 
         [self.collectionView reloadData];
         
@@ -67,7 +67,7 @@ static NSString * const CVCellID = @"CVCellID";
         XFOrderCount *totalCount = self.titlesArray[0];
         NSString *totalValue = totalCount.count;
         NSInteger total = [totalValue integerValue] + [countString integerValue];
-        totalCount.count = [NSString stringWithFormat:@"%ld", total];
+        totalCount.count = [NSString stringWithFormat:@"%ld", (long)total];
         [self.collectionView reloadData];
         
     } failure:^(NSError *error, NSInteger statusCode) {
@@ -82,7 +82,7 @@ static NSString * const CVCellID = @"CVCellID";
         XFOrderCount *totalCount = self.titlesArray[0];
         NSString *totalValue = totalCount.count;
         NSInteger total = [totalValue integerValue] + [countString integerValue];
-        totalCount.count = [NSString stringWithFormat:@"%ld", total];
+        totalCount.count = [NSString stringWithFormat:@"%ld", (long)total];
         [self.collectionView reloadData];
         
     } failure:^(NSError *error, NSInteger statusCode) {
