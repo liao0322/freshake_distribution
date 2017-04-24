@@ -92,8 +92,10 @@ static NSString * const CVCellID = @"CVCellID";
     [XFDataStatisticsRequest orderListWithEndDate:[NSDate stringDateWithDate:[NSDate now] formatString:@"yyyy-MM-dd"] Success:^(NSArray *dataArray, NSInteger statusCode) {
         [self.chartDataArray removeAllObjects];
         [self.chartDataArray addObjectsFromArray:dataArray];
-        if (self.chartDataArray.count != 0 || self.chartDataArray.count != 1) {
-            [self refreshChartData];
+        if (self.chartDataArray.count != 0) {
+            if (self.chartDataArray.count != 1) {
+                [self refreshChartData];
+            }
         }
         
     } failure:^(NSError *error, NSInteger statusCode) {
